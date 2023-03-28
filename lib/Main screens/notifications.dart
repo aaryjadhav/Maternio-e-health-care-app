@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternio_1/Main%20screens/navbar.dart';
 
 class notification extends StatefulWidget {
   notification ({Key? key}) : super(key: key);
@@ -610,6 +611,7 @@ class _notificationState extends State<notification> {
                 ),
               ],
         ),
+        bottomNavigationBar: BottomNavBar(2),
       )
       );
   }

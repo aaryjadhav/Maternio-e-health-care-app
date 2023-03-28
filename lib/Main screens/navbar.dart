@@ -65,7 +65,7 @@ class BottomNavBar extends StatelessWidget {
 
           if (index == 2) {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>  doctorsearch()));
+                MaterialPageRoute(builder: (context) =>  notification()));
           }
           if (index == 3) {
             Navigator.push(

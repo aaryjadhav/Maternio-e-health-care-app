@@ -30,9 +30,17 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         drawer: Drawer_screen(),
         appBar: AppBar(
-
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
+          title: Center(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+              child: Text("MATERNIO",style: GoogleFonts.akshar(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 23,color: Colors.white,
+              )),
+            ),
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: Colors.deepPurpleAccent.shade700,
           elevation: 0,
           actions: [
             IconButton(
@@ -40,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                 Icons.person,
                 size: 30,
               ),
-              color: Colors.black,
+              color: Colors.white,
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Profile()));
@@ -152,7 +160,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/abstract.jpg"),
+                              image: AssetImage("assets/doctorhome.jpg"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),
@@ -212,8 +220,9 @@ class _HomePageState extends State<HomePage> {
                                   Container(
                                     margin: EdgeInsets.only(left: 12, top: 30),
                                     child: CircleAvatar(
+                                      backgroundColor: Colors.deepPurpleAccent,
                                       backgroundImage:
-                                      AssetImage('assets/doctorpp.png'),
+                                      AssetImage('assets/babysitter.png',),
                                       radius: 50,
                                     ),
                                   ),
@@ -250,7 +259,7 @@ class _HomePageState extends State<HomePage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      doctor_profile()));
+                                                      babysittersearch()));
                                           // handle profile icon pres
                                         },
                                       ),
@@ -264,7 +273,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/abstract.jpg"),
+                              image: AssetImage("assets/babysitterhome.jpg"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),
@@ -303,7 +312,24 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        size: 25,
+                        color: Colors.black,
+                      ),
+                      color: Colors.black,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    pregnantmycare()));
+                        // handle profile icon pres
+                      },
+                    ),
                   ],
+
                 ),
                 SizedBox(
                   height: 180,

@@ -2,7 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:maternio_1/Babysitter/baby_profile.dart';
 import 'package:maternio_1/doctor/DoctorFormPageGradient.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get.dart';
 
 import '../Main screens/navbar.dart';
 
@@ -55,67 +59,75 @@ class _HomePageState extends State<Profile> {
           // Profile Container -------------------------------------------------
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 33),
-            child: Container(
-                height: 90,
-                decoration: BoxDecoration(
-                  color: Color(0xff6100FF),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(width: 16),
-                    Container(
-                      width: 55,
-                      height: 55,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef"),
-                              fit: BoxFit.cover),
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 1.5,
-                            color: Colors.white,
-                          )),
-                    ),
-                    SizedBox(width: 13),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        Text(
-                          'Aary Jadhav',
-                          style: TextStyle(
-                              fontSize: 16,
+            child: InkWell(onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          baby_profile()));
+            },
+              child: Container(
+                  height: 90,
+                  decoration: BoxDecoration(
+                    color: Color(0xff6100FF),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(width: 16),
+                      Container(
+                        width: 55,
+                        height: 55,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef"),
+                                fit: BoxFit.cover),
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 1.5,
                               color: Colors.white,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          '@gorggaming',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400),
-                        )
-                      ],
-                    ),
-                    //---------
-                    Spacer(),
-                    IconButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FormPage()));
-                        },
-                        icon: Icon(Icons.create_outlined,
-                            color: Colors.white, size: 24)),
-                    SizedBox(width: 16)
-                  ],
-                )),
+                            )),
+                      ),
+                      SizedBox(width: 13),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Text(
+                            'Aary Jadhav',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            '@gorggaming',
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400),
+                          )
+                        ],
+                      ),
+                      //---------
+                      Spacer(),
+                      IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => FormPage()));
+                          },
+                          icon: Icon(Icons.create_outlined,
+                              color: Colors.white, size: 24)),
+                      SizedBox(width: 16)
+                    ],
+                  )),
+            ),
           ),
 
           //Logout -------------------------------------------------------------
@@ -169,11 +181,6 @@ class _HomePageState extends State<Profile> {
                     ],
                   ),
                   //---------
-                  Spacer(),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.arrow_forward_ios_outlined,
-                          color: Colors.black, size: 16)),
                   SizedBox(width: 16)
                 ],
               ),
@@ -235,7 +242,9 @@ class _HomePageState extends State<Profile> {
                       //---------
                       Spacer(),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launch('tel:+919004187496');
+                          },
                           icon: Icon(Icons.arrow_forward_ios_outlined,
                               color: Colors.black, size: 16)),
                       SizedBox(width: 16)

@@ -27,23 +27,29 @@ class _PregWrokoutState extends State<PregWrokout> {
       child: Scaffold(
         backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.black12,
-          elevation: 0,
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.person,
-                size: 30,
-              ),
-              color: Colors.black,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-                // handle profile icon pres
-              },
+          title: Center(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+              child: Text("Workout Videos",style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w500,
+                fontSize: 22,color: Colors.black
+              )),
             ),
-          ],
+          ),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: Padding(
+            padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+            child: IconButton(
+                iconSize: 30,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
+                )),
+          ),
         ),
         body: //
             Scrollbar(
@@ -55,18 +61,50 @@ class _PregWrokoutState extends State<PregWrokout> {
                 Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
+                  child: Container(
+                    child: Text('Select Language for Your Workout',
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                        )),
+                    height: 50,
+                    color: Colors.white,
+                  ),
+                ),
                 SizedBox(height: 20,),
                 Row(
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: 15, top: 0),
-                      child: InkWell(onTap: (){},
+                      child: InkWell(onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    PregExcercisePageEng()));
+                      },
                         child: Text(
                           " ENGLISH 'अंग्रेज़ी'",
                           style: GoogleFonts.poppins(
                               fontSize: 25, fontWeight: FontWeight.w500),
                         ),
                       ),
+                    ),
+                    IconButton(
+                        iconSize: 25,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PregExcercisePageEng()));
+                        },
+                        icon: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                        )
                     ),
                   ],
                 ),
@@ -83,58 +121,21 @@ class _PregWrokoutState extends State<PregWrokout> {
 
                         // color: Colors.blue,
 
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  height: 70,
-                                  //   width: double.infinity,
-                                  margin: EdgeInsets.only(top: 40, left: 15),
-
-                                  child: Expanded(
-                                    child: Text(
-                                      " ENGLISH",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black),
-                                      //  maxLines: null,
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(75, 15, 0, 0),
-                                    child: IconButton(
-                                      icon: Icon(
-                                        Icons.arrow_forward_ios_sharp,
-                                        size: 30,
-                                        color: Colors.black,
-                                      ),
-                                      color: Colors.black,
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                   PregExcercisePageEng()));
-                                        // handle profile icon pres
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                        child: InkWell(onTap: (){ Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    PregExcercisePageEng()));},
+                          child: Column(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                            ],
+                          ),
                         ),
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/abstract.jpg"),
+                              image: AssetImage("assets/english.jpg"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),
@@ -158,13 +159,33 @@ class _PregWrokoutState extends State<PregWrokout> {
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: 15, top: 0),
-                      child: InkWell( onTap: (){},
+                      child: InkWell( onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    PregExcercisePageHindi()));
+                      },
                         child: Text(
                           " HINDI 'हिंदी'",
                           style: GoogleFonts.poppins(
                               fontSize: 25, fontWeight: FontWeight.w500),
                         ),
                       ),
+                    ),
+                    IconButton(
+                        iconSize: 25,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PregExcercisePageHindi()));
+                        },
+                        icon: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.black,
+                        )
                     ),
                   ],
                 ),
@@ -181,58 +202,23 @@ class _PregWrokoutState extends State<PregWrokout> {
 
                         // color: Colors.blue,
 
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  height: 70,
-                                  //   width: double.infinity,
-                                  margin: EdgeInsets.only(top: 40, left: 15),
-
-                                  child: Expanded(
-                                    child: Text(
-                                      " HINDI",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black),
-                                      //  maxLines: null,
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  child: Padding(
-                                    padding:
-                                    const EdgeInsets.fromLTRB(118, 15, 0, 0),
-                                    child: IconButton(
-                                      icon: Icon(
-                                        Icons.arrow_forward_ios_sharp,
-                                        size: 30,
-                                        color: Colors.black,
-                                      ),
-                                      color: Colors.black,
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    PregExcercisePageHindi()));
-                                        // handle profile icon pres
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                        child: InkWell(onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PregExcercisePageHindi()));
+                        },
+                          child: Column(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                            ],
+                          ),
                         ),
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/abstract.jpg"),
+                              image: AssetImage("assets/hindi.png"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),

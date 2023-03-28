@@ -1,21 +1,23 @@
-//--------------------------------babysitter_screens--------------------------
+//--------------------------------baby_screens--------------------------
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:maternio_1/doctor/DoctorFormPageGradient.dart';
 
 import '../Main screens/navbar.dart';
 
 //import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-class babyssitter_profile_other extends StatefulWidget {
-  const  babyssitter_profile_other({Key? key}) : super(key: key);
+
+class baby_profile extends StatefulWidget {
+  const baby_profile({Key? key}) : super(key: key);
 
   @override
-  State<babyssitter_profile_other> createState() => _babyssitter_profile_otherState();
+  State<baby_profile> createState() => _baby_profileState();
 }
 
-class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
+class _baby_profileState extends State<baby_profile> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -44,8 +46,7 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.zero,
                                 topRight: Radius.zero,
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8)),
+                                bottomRight: Radius.circular(20)),
                           ),
                           height: double.infinity,
                           // width: 180,
@@ -91,15 +92,32 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                       radius: 60,
                                       child: CircleAvatar(
                                           backgroundImage:
-                                              AssetImage('assets/babysitter.png'),
+                                              AssetImage('assets/baby.png'),
                                           radius: 55),
                                     ),
                                   ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(85, 40, 0, 0),
+                                    child: CircleAvatar(
+                                      backgroundColor: Color(0xff6DAC67),
+                                      radius: 14,
+                                      child: IconButton(
+                                        icon: Icon(Icons.edit),
+                                        onPressed: () { Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => FormPage()));},
+                                        color: Colors.white,
+                                        iconSize: 15,
+                                      ),
+                                    ),
+                                  )
                                 ],
                               ),
                               SizedBox(height: 20),
                               Text(
-                                "Ms.Babysitter",
+                                  "Baby",
                                   style: GoogleFonts.poppins(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500)
@@ -125,13 +143,18 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                   child: Padding(
                                     padding: const EdgeInsets.fromLTRB(
                                         82, 15, 25, 0),
-                                    child: InkWell(onTap: (){},
+                                    child: InkWell(onTap: (){
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => FormPage()));
+                                    },
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
-                                          Icon(Icons.message_rounded),
+                                          Icon(Icons.edit,size: 20,),
                                           Text(
-                                              "Message",
+                                              "Edit",
                                               style: GoogleFonts.poppins(
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.w500)
@@ -176,13 +199,13 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                             CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "Designation",
+                                                "Profile",
                                                 style: GoogleFonts.poppins(
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "Babysitter",
+                                                "Baby",
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -190,21 +213,7 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                                     //fontWeight: FontWeight.w500,
                                                     fontSize: 12),
                                               ),
-                                              Text(
-                                                "Contact",
-                                                style: GoogleFonts.poppins(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 17),
-                                              ),
-                                              Text(
-                                                "1234567890",
-                                                style: GoogleFonts.poppins(
-                                                    color: Colors
-                                                        .deepPurpleAccent
-                                                        .shade700,
-                                                    //fontWeight: FontWeight.w500,
-                                                    fontSize: 12),
-                                              ),
+
                                               Text(
                                                 "Birth Date",
                                                 style: GoogleFonts.poppins(
@@ -236,13 +245,13 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                                     fontSize: 12),
                                               ),
                                               Text(
-                                                "Working Hours",
+                                                "Age",
                                                 style: GoogleFonts.poppins(
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "9:00am - 7:00pm",
+                                                "1 Month",
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -280,7 +289,7 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                           child: Column(
                             children: [
                               Expanded(
-                                flex: 7,
+                                flex: 9,
                                 child: Container(
                                   decoration: BoxDecoration(
                                     boxShadow: [
@@ -290,11 +299,8 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                       )
                                     ],
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(20),
-                                        topRight: Radius.circular(20),
-                                        bottomLeft: Radius.circular(20),
-                                        bottomRight: Radius.circular(20)),
+                                    borderRadius: BorderRadius.circular(20
+                                        ),
                                   ),
                                   child: Padding(
                                     padding:
@@ -315,7 +321,7 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "52/1.7 Feet",
+                                                "52cm/1.7 feet",
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -323,12 +329,12 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                                     //fontWeight: FontWeight.w500,
                                                     fontSize: 12),
                                               ),
-                                              Text("Fees",
+                                              Text("Weight",
                                                 style: GoogleFonts.poppins(
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),),
                                               Text(
-                                                "₹10,000/Month",
+                                                "3.2 kg",
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -336,17 +342,32 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                                     //fontWeight: FontWeight.w500,
                                                     fontSize: 12),
                                               ),
-                                              // Text("Age",
-                                              //     style: TextStyle(
-                                              //         fontWeight:
-                                              //             FontWeight.bold)),
-                                              // Text(
-                                              //   "21",
-                                              //   style: TextStyle(
-                                              //       color: Colors
-                                              //           .deepPurpleAccent
-                                              //           .shade200),
-                                              //),
+                                              Text("Allergy",
+                                                style: GoogleFonts.poppins(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 17),),
+                                              Text(
+                                                "No allergy",
+                                                style: GoogleFonts.poppins(
+                                                    color: Colors
+                                                        .deepPurpleAccent
+                                                        .shade700,
+                                                    //fontWeight: FontWeight.w500,
+                                                    fontSize: 12),
+                                              ),
+                                              Text("Blood Group",
+                                                style: GoogleFonts.poppins(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 17),),
+                                              Text(
+                                                "B +ve",
+                                                style: GoogleFonts.poppins(
+                                                    color: Colors
+                                                        .deepPurpleAccent
+                                                        .shade700,
+                                                    //fontWeight: FontWeight.w500,
+                                                    fontSize: 12),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -357,10 +378,10 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                 ),
                               ),
                               SizedBox(
-                                height: 130,
+                                height: 50,
                               ),
                               Expanded(
-                                flex: 3,
+                                flex: 1,
                                 child: Container(
                                   color: Colors.white,
                                 ),
@@ -383,11 +404,8 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                 )
                               ],
                               color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20)),
+                              borderRadius: BorderRadius.circular(20
+                              ),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
@@ -400,13 +418,39 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Experience",
+                                          "Parents Contact No.",
                                           style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 17),
                                         ),
                                         Text(
-                                          "5 Years",
+                                          "+91 1234567890",
+                                          style: GoogleFonts.poppins(
+                                              color: Colors
+                                                  .deepPurpleAccent
+                                                  .shade700,
+                                              //fontWeight: FontWeight.w500,
+                                              fontSize: 12),
+                                        ),
+                                        Text("Mother's Name",
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 17),),
+                                        Text(
+                                          "Mrs.Sofia Angad",
+                                          style: GoogleFonts.poppins(
+                                              color: Colors
+                                                  .deepPurpleAccent
+                                                  .shade700,
+                                              //fontWeight: FontWeight.w500,
+                                              fontSize: 12),
+                                        ),
+                                         Text("Father's Name",
+                                           style: GoogleFonts.poppins(
+                                               fontWeight: FontWeight.w500,
+                                               fontSize: 17),),
+                                        Text(
+                                          "Mr. Raj Angad",
                                           style: GoogleFonts.poppins(
                                               color: Colors
                                                   .deepPurpleAccent
@@ -420,7 +464,7 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                               fontSize: 17),),
                                         Flexible(
                                           child: Text(
-                                            "B/109, Bhanuhans C.H.S, Navghar Road, Bhayandar(east), Thane-401105",
+                                            "B/109, Bhanuhans C.H.S,Navghar Road, Bhayandar(east), Thane-401105",
                                             style: GoogleFonts.poppins(
                                                 color: Colors
                                                     .deepPurpleAccent
@@ -429,21 +473,7 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                                                 fontSize: 12),
                                           ),
                                         ),
-                                        Text("Qualification",
-                                          style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 17),),
-                                        Flexible(
-                                          child: Text(
-                                            "\u2022 P.G Diploma in Gynaecology & Obstetrics (D.G.O)\n\u2022 Doctor of Medicine (M.D)",
-                                            style: GoogleFonts.poppins(
-                                                color: Colors
-                                                    .deepPurpleAccent
-                                                    .shade700,
-                                                //fontWeight: FontWeight.w500,
-                                                fontSize: 12),
-                                          ),
-                                        ),
+
 
                                         // Text("Age",
                                         //     style: TextStyle(
@@ -466,7 +496,6 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
                           ),
                         ),
                       ],
-
                     ),
                   ),
                 ),
@@ -480,7 +509,8 @@ class _babyssitter_profile_otherState extends State<babyssitter_profile_other> {
               ],
             ),
             //-----------------------------bottom navigation bar----------------------
-           bottomNavigationBar: BottomNavBar(0),
-        ));
+            bottomNavigationBar: BottomNavBar(3),
+        )
+    );
   }
 }
