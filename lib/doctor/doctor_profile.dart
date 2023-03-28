@@ -7,7 +7,7 @@ import 'package:maternio_1/Main%20screens/home.dart';
 import 'package:maternio_1/doctor/profile.dart';
 
 import '../Main screens/navbar.dart';
-import 'DoctorFormPageGradient.dart';
+import '../Baby/BabyFormPageGradient.dart';
 //import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class doctor_profile extends StatefulWidget {
@@ -112,7 +112,7 @@ class _doctor_profileState extends State<doctor_profile> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    FormPage()));},
+                                                    BabyFormPage()));},
                                       ),
                                     ),
                                   )

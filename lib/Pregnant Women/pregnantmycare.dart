@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:maternio_1/Pregnant%20Women/pregworkout.dart';
 
+import '../Baby/baby_massage.dart';
 import '../Main screens/navbar.dart';
 
 
@@ -76,7 +77,7 @@ class _pregnantmycareState extends State<pregnantmycare> {
 
                           SizedBox(width: 16),
                           Text(
-                            'Pre-Pregnancy Workout',
+                            'Pregnancy Workout',
                             style:  GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 21,color: Colors.white)
                           ),
                         ],
@@ -88,38 +89,43 @@ class _pregnantmycareState extends State<pregnantmycare> {
                     height: 20,
                     color: Colors.white,
                   ),
-                  Container(
+                  InkWell(onTap: (){Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => massage_pg()));},
+                    child: Container(
 
-                    height: 100,
-                    width: 400,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(97, 0, 255, 1),
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.8),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('assets/todaytip.png'),
-                        ),
+                      height: 100,
+                      width: 400,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(97, 0, 255, 1),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.8),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 35,
+                            backgroundColor: Colors.white,
+                            backgroundImage: AssetImage('assets/babyex.png'),
+                          ),
 
-                        SizedBox(width: 16),
-                        Text(
-                          'Todays Tips',
-                          style:  GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 21,color: Colors.white)
-                        ),
-                      ],
+                          SizedBox(width: 16),
+                          Text(
+                            'Massage For Baby',
+                            style:  GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 21,color: Colors.white)
+                          ),
+                        ],
+                      ),
                     ),
                   ),
 
@@ -151,12 +157,12 @@ class _pregnantmycareState extends State<pregnantmycare> {
                         CircleAvatar(
                             radius: 35,
                             backgroundColor: Colors.white,
-                            backgroundImage: AssetImage('assets/diet.png'),
+                            backgroundImage: AssetImage('assets/todaytip.png'),
                         ),
 
                         SizedBox(width: 16),
                         Text(
-                          'My Diet',
+                          'Additional Information',
                           style:  GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 21,color: Colors.white)
                         ),
                       ],
@@ -190,12 +196,12 @@ class _pregnantmycareState extends State<pregnantmycare> {
                         CircleAvatar(
                           radius: 35,
                           backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('assets/weekly.png'),
+                          backgroundImage: AssetImage('assets/diet.png'),
                         ),
 
                         SizedBox(width: 16),
                         Text(
-                          'Week',
+                          'Diet',
                           style:  GoogleFonts.poppins(fontWeight: FontWeight.w500,fontSize: 21,color: Colors.white)
                         ),
                       ],

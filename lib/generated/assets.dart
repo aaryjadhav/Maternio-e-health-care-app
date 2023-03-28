@@ -26,7 +26,7 @@ class Assets {
   static const String assetsBabyUpper2 = 'assets/baby_upper_2.gif';
   static const String assetsBabyUpper3 = 'assets/baby_upper_3.gif';
   static const String assetsBabyex = 'assets/babyex.png';
-  static const String assetsBabysitter  = 'assets/babysitter.png';
+  static const String assetsBabysitter = 'assets/babysitter.png';
   static const String assetsBabysitterhome = 'assets/babysitterhome.jpg';
   static const String assetsBabysittericon = 'assets/babysittericon.png';
   static const String assetsCustomerSupport = 'assets/customer-support.png';
@@ -65,6 +65,7 @@ class Assets {
   static const String mainAndroidManifest = 'android/app/src/main/AndroidManifest.xml';
   static const String maternio1AndroidGradlew = 'android/gradlew.bat';
   static const String maternio1AssetsAbstract = 'assets/abstract.png';
+  static const String maternio1AssetsBabysitterhome = 'assets/babysitterhome.png';
   static const String maternio1AssetsDoctorhome = 'assets/doctorhome.png';
   static const String maternio1AssetsHindi = 'assets/hindi.png';
   static const String maternio1MainActivity = 'android/app/src/main/kotlin/com/example/maternio_1/MainActivity.kt';

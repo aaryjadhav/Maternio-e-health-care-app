@@ -3,8 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/Babysitter/baby_profile.dart';
-import 'package:maternio_1/doctor/DoctorFormPageGradient.dart';
+import 'package:maternio_1/Baby/BabyFormPageGradient.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 
@@ -48,17 +49,20 @@ class _HomePageState extends State<Profile> {
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 16, top: 10),
+              padding: const EdgeInsets.only(left: 16, top: 0),
               child: Text(
                 "Profile",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 25,
+                  )
               ),
             ),
           ),
 
           // Profile Container -------------------------------------------------
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 33),
+            padding: const EdgeInsets.fromLTRB(16, 5, 16, 33),
             child: InkWell(onTap: (){
               Navigator.push(
                   context,
@@ -120,7 +124,7 @@ class _HomePageState extends State<Profile> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => FormPage()));
+                                    builder: (context) => BabyFormPage()));
                           },
                           icon: Icon(Icons.create_outlined,
                               color: Colors.white, size: 24)),

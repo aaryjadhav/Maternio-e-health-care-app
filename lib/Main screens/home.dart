@@ -6,9 +6,11 @@ import 'package:maternio_1/Babysitter/babysitter_profile.dart';
 import 'package:maternio_1/Babysitter/babysittersearch.dart';
 import 'package:maternio_1/Babysitter/bs_profile_others.dart';
 import 'package:maternio_1/Main%20screens/Drawer.dart';
+import 'package:maternio_1/Pregnant%20Women/PregnantFormPageGradient.dart';
 import 'package:maternio_1/doctor/doctorsearch.dart';
 import 'package:maternio_1/Main%20screens/profile_selection.dart';
 import 'package:maternio_1/Pregnant%20Women/ytpage.dart';
+import '../Baby/BabyFormPageGradient.dart';
 import '../Pregnant Women/pregnantmycare.dart';
 import '../Pregnant Women/pregworkout.dart';
 import '../doctor/doctor_profile.dart';
@@ -33,10 +35,15 @@ class _HomePageState extends State<HomePage> {
           title: Center(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-              child: Text("MATERNIO",style: GoogleFonts.akshar(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 23,color: Colors.white,
-              )),
+              child: InkWell(onTap: (){Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePage()));},
+                child: Text("MATERNIO",style: GoogleFonts.akshar(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 23,color: Colors.white,
+                )),
+              ),
             ),
           ),
           iconTheme: IconThemeData(color: Colors.white),
@@ -273,7 +280,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/babysitterhome.jpg"),
+                              image: AssetImage("assets/babysitterhome.png"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),
@@ -373,11 +380,11 @@ class _HomePageState extends State<HomePage> {
 
                                     child: Padding(
                                       padding:
-                                          const EdgeInsets.fromLTRB(10, 0, 29, 0),
+                                          const EdgeInsets.fromLTRB(10, 0, 45, 0),
                                       child: Center(
                                         child: Expanded(
                                           child: Text(
-                                            "Pre-Pregnancy\n      Workout",
+                                            "Pregnancy\n  Workout",
                                             style: GoogleFonts.poppins(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,

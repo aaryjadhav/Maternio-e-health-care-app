@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/Babysitter/babysitter_profile.dart';
-import 'package:maternio_1/doctor/DoctorFormPageGradient.dart';
+import 'package:maternio_1/Baby/BabyFormPageGradient.dart';
+import 'package:maternio_1/Pregnant%20Women/PregnantFormPageGradient.dart';
 
 class ProfileSelection extends StatefulWidget {
   const ProfileSelection({Key? key}) : super(key: key);
@@ -92,7 +93,7 @@ class _ProfileSelectionState extends State<ProfileSelection> {
           Expanded(
               flex: 10,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Expanded(
                       flex: 5,
@@ -101,7 +102,7 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                           Expanded(
                             flex: 5,
                             child: Padding(
-                              padding: const EdgeInsets.fromLTRB(15, 0, 0, 25),
+                              padding: const EdgeInsets.fromLTRB(15, 0, 5, 25),
                               child: Column(
                                 children: <Widget>[
                                   Expanded(
@@ -112,53 +113,56 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      FormPage()));
+                                                      BabyFormPage()));
                                         },
-                                        child: Container(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: <Widget>[
-                                              Padding(
+                                        child: SingleChildScrollView(
+                                          child: Container(
+                                            width: 180,
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.fromLTRB(
+                                                            20, 20, 0, 0),
+                                                    child: Image.asset(
+                                                      "assets/Baby1.png",
+                                                      width: 25,
+                                                      height: 25,
+                                                    )),
+                                                Padding(
                                                   padding:
                                                       const EdgeInsets.fromLTRB(
-                                                          20, 20, 0, 0),
-                                                  child: Image.asset(
-                                                    "assets/Baby1.png",
-                                                    width: 25,
-                                                    height: 25,
-                                                  )),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.fromLTRB(
-                                                        20, 15, 0, 0),
-                                                child: Text(
-                                                  "Doctor",
-                                                  style: GoogleFonts.poppins(
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      fontSize: 18),
+                                                          20, 15, 0, 0),
+                                                  child: Text(
+                                                    "Baby/Mother",
+                                                    style: GoogleFonts.poppins(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 18),
+                                                  ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 38,
-                                              ),
-                                              Image.asset("assets/mother.png")
-                                            ],
+                                                SizedBox(
+                                                  height: 38,
+                                                ),
+                                                Image.asset("assets/mother.png")
+                                              ],
+                                            ),
+                                            decoration: BoxDecoration(
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black,
+                                                  blurRadius: 5,
+                                                ),
+                                              ],
+                                              color: Colors
+                                                  .deepPurpleAccent.shade100,
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            ),
+                                            //alignment: Alignment.center,
                                           ),
-                                          decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black,
-                                                blurRadius: 5,
-                                              ),
-                                            ],
-                                            color: Colors
-                                                .deepPurpleAccent.shade100,
-                                            borderRadius:
-                                                BorderRadius.circular(30),
-                                          ),
-                                          //alignment: Alignment.center,
                                         ),
                                       )),
                                   SizedBox(
@@ -241,7 +245,7 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              babysitter_profile()));
+                                              PregnantFormPage()));
                                 },
                                 child: Container(
                                   child: Column(
@@ -260,11 +264,13 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                                       Padding(
                                         padding: const EdgeInsets.fromLTRB(
                                             20, 10, 0, 0),
-                                        child: Text(
-                                          "Pregnant",
-                                          style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 18),
+                                        child: SingleChildScrollView(
+                                          child: Text(
+                                            "Pregnant Women",
+                                            style: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 18),
+                                          ),
                                         ),
                                       ),
                                       SizedBox(

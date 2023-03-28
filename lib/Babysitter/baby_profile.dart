@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:maternio_1/doctor/DoctorFormPageGradient.dart';
+import 'package:maternio_1/Baby/BabyFormPageGradient.dart';
 
 import '../Main screens/navbar.dart';
 
@@ -107,7 +107,7 @@ class _baby_profileState extends State<baby_profile> {
                                         onPressed: () { Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                                builder: (context) => FormPage()));},
+                                                builder: (context) => BabyFormPage()));},
                                         color: Colors.white,
                                         iconSize: 15,
                                       ),
@@ -147,7 +147,7 @@ class _baby_profileState extends State<baby_profile> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => FormPage()));
+                                              builder: (context) => BabyFormPage()));
                                     },
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.center,

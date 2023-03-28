@@ -6,14 +6,14 @@ import 'package:day_night_time_picker/day_night_time_picker.dart';
 
 import '../Main screens/home.dart';
 
-class FormPage extends StatefulWidget {
-  const FormPage({Key? key}) : super(key: key);
+class PregnantFormPage extends StatefulWidget {
+  const PregnantFormPage({Key? key}) : super(key: key);
 
   @override
-  State<FormPage> createState() => _FormPageState();
+  State<PregnantFormPage> createState() => _PregFormPageState();
 }
 
-class _FormPageState extends State<FormPage> {
+class _PregFormPageState extends State<PregnantFormPage> {
   TextEditingController _date = TextEditingController();
   TextEditingController timestrt = TextEditingController();
   TextEditingController timeend = TextEditingController();
@@ -67,17 +67,33 @@ class _FormPageState extends State<FormPage> {
                   ),
 
                   //Profile Text -----------------------------------------------
-                  Padding(
-                    padding: const EdgeInsets.only(top: 65),
-                    child: Center(
-                      child: Text(
-                        "Profile",
-                        style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 55, 0, 0),
+                        child: IconButton(
+                            iconSize: 30,
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                            )),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(110, 55, 0, 0),
+                        child: Center(
+                          child: Text(
+                            "Profile",
+                            style: TextStyle(
+                                fontSize: 26,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
 
                   //----------------------
@@ -219,33 +235,33 @@ class _FormPageState extends State<FormPage> {
                   Flexible(
                     child: GestureDetector(
                       onTap: () {
-                        _handleChange('male');
+                        _handleChange('female');
                       },
                       child: Container(
                         height: 46,
                         // width: 150,
                         decoration: BoxDecoration(
-                            color: _radioBtnVal == 'male'
+                            color: _radioBtnVal == 'female'
                                 ? Colors.grey.shade100
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                                width: _radioBtnVal == 'male' ? 1.5 : 1,
-                                color: _radioBtnVal == 'male'
+                                width: _radioBtnVal == 'female' ? 1.5 : 1,
+                                color: _radioBtnVal == 'female'
                                     ? Colors.black
                                     : Colors.grey.shade600)),
                         child: Row(
                           children: [
                             Radio(
                               activeColor: Colors.black,
-                              value: 'male',
+                              value: 'female',
                               groupValue: _radioBtnVal,
                               onChanged: _handleChange,
                             ),
                             Text(
-                              'Male',
+                              'Female',
                               style: TextStyle(
-                                  color: _radioBtnVal == 'male'
+                                  color: _radioBtnVal == 'female'
                                       ? Colors.black
                                       : Colors.grey.shade600),
                             )
@@ -258,33 +274,33 @@ class _FormPageState extends State<FormPage> {
                   Flexible(
                     child: GestureDetector(
                         onTap: () {
-                          _handleChange('female');
+                          _handleChange('other');
                         },
                         child: Container(
                           height: 46,
                           // width: 150,
                           decoration: BoxDecoration(
-                              color: _radioBtnVal == 'female'
+                              color: _radioBtnVal == 'other'
                                   ? Colors.grey.shade100
                                   : Colors.white,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                  width: _radioBtnVal == 'female' ? 1.5 : 1,
-                                  color: _radioBtnVal == 'female'
+                                  width: _radioBtnVal == 'other' ? 1.5 : 1,
+                                  color: _radioBtnVal == 'other'
                                       ? Colors.black
                                       : Colors.grey.shade600)),
                           child: Row(
                             children: [
                               Radio(
                                 activeColor: Colors.black,
-                                value: 'female',
+                                value: 'other',
                                 groupValue: _radioBtnVal,
                                 onChanged: _handleChange,
                               ),
                               Text(
-                                'Female',
+                                'Other',
                                 style: TextStyle(
-                                    color: _radioBtnVal == 'female'
+                                    color: _radioBtnVal == 'other'
                                         ? Colors.black
                                         : Colors.grey.shade600),
                               )
@@ -296,7 +312,140 @@ class _FormPageState extends State<FormPage> {
                 ],
               ),
               SizedBox(height: 12),
-
+              //Age---------------------------
+              labelText("Age"),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                      return 'Enter Correct Age';
+                    } else {
+                      return null;
+                    }
+                  },
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Age(25 Year 1 Month)", false),
+                ),
+              ),
+              //Blood Group------------------------------------------------
+              labelText("Blood Group"),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                      return 'Enter Correct Blood Group';
+                    } else {
+                      return null;
+                    }
+                  },
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Blood Group (B +ve)", false),
+                ),
+              ),
+              //Height---------------------------
+              labelText("Height"),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                      return 'Enter Correct Height';
+                    } else {
+                      return null;
+                    }
+                  },
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Height (5''5 foot')", false),
+                ),
+              ),
+              //Weight------------------------------------------------
+              labelText("Weight"),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                      return 'Enter Correct Weight';
+                    } else {
+                      return null;
+                    }
+                  },
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Weight (2.5 kg)", false),
+                ),
+              ),
+              //Allergy------------------------------------------------
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 35, bottom: 1),
+                  child: Text("Allergy",style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black)),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Allergy(If Any/None)", false),
+                ),
+              ),
+              //Spouse name--------------------------------
+              labelText('Spouse Name'),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                      return 'Enter Correct Name';
+                    } else {
+                      return null;
+                    }
+                  },
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Spouse Name", false),
+                ),
+              ),
+              //Spouse Blood Group--------------------------------
+              labelText('Spouse Blood Group'),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                      return 'Enter Correct Blood Group';
+                    } else {
+                      return null;
+                    }
+                  },
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("Spouse Blood Group(B +ve)", false),
+                ),
+              ),
               //Mobile Number TextField ----------------------------------------
               labelText('Mobile Number'),
               Padding(
@@ -316,134 +465,6 @@ class _FormPageState extends State<FormPage> {
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
                   decoration: getDecoration("xxxxxxxxxx", false),
-                ),
-              ),
-
-              //Qualification TextField ----------------------------------------
-              labelText('Qualification'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please Enter Your Qualification';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Enter Your Qualification", false),
-                ),
-              ),
-
-              //Hospital/Clinic Name TextField ---------------------------------
-              labelText('Hospital/Clinic Name'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Please Enter Hospital/Clinic Name';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration:
-                  getDecoration("Enter Your Hospital/Clinic Name", false),
-                ),
-              ),
-
-              //Hospital/Clinic Address TextField ------------------------------
-              labelText('Hospital/Clinic Address'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  maxLines: 2,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please Enter Hospital/Clinic Address';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration(
-                      "Enter Your Hospital/Clinic Address", false),
-                ),
-              ),
-
-              //City TextField -------------------------------------------------
-              labelText('City'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Please Enter Your City Name';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Enter Your City Name", false),
-                ),
-              ),
-
-              //Country TextField ----------------------------------------------
-              labelText('Country'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Please Enter Your Country';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Enter Your Country", false),
-                ),
-              ),
-
-              //Zip/Postal Code TextField --------------------------------------
-              labelText('Zip/Postal Code'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[0-9]{6}$').hasMatch(value)) {
-                      return 'Enter Correct Zip/Postal Code';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("xxxxxx", false),
                 ),
               ),
 
@@ -469,111 +490,30 @@ class _FormPageState extends State<FormPage> {
                 ),
               ),
 
-              //Working Time TextFeild -----------------------------------------
-              labelText("Working Hours"),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(width: 30),
-                  Flexible(
-                    child: TextFormField(
-                      controller: timestrt,
-                      readOnly: true,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please Select Time';
-                        } else {
-                          return null;
-                        }
-                      },
-                      onTap: (() async {
-                        Navigator.of(context).push(
-                          showPicker(
-                            context: context,
-                            value: _time,
-                            is24HrFormat: false,
-                            elevation: 1,
-                            isInlinePicker: false,
-                            onChange: onTimeChanged,
-                            accentColor: Color(0xff6100FF),
-                            cancelStyle: TextStyle(
-                                color: Color(0xff6100FF),
-                                fontWeight: FontWeight.w600),
-                            okStyle: TextStyle(
-                                color: Color(0xff6100FF),
-                                fontWeight: FontWeight.w600),
-                            minuteInterval: TimePickerInterval.FIVE,
-                            onChangeDateTime: (DateTime dateTime) {
-                              if (_time != null) {
-                                DateTime parsedTime = DateFormat.jm()
-                                    .parse(_time.format(context).toString());
-                                String formattedTime =
-                                DateFormat('HH:mm').format(parsedTime);
-                                setState(() {
-                                  timestrt.text = formattedTime;
-                                });
-                              }
-                            },
-                          ),
-                        );
-                      }),
-                      cursorColor: Colors.black,
-                      decoration: getDecoration("Starting", true),
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  Flexible(
-                    child: TextFormField(
-                        controller: timeend,
-                        readOnly: true,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Please Select Time";
-                          } else {
-                            return null;
-                          }
-                        },
-                        onTap: (() async {
-                          Navigator.of(context).push(
-                            showPicker(
-                              context: context,
-                              value: _time,
-                              is24HrFormat: false,
-                              elevation: 1,
-                              isInlinePicker: false,
-                              onChange: onTimeChanged,
-                              accentColor: Color(0xff6100FF),
-                              cancelStyle: TextStyle(
-                                  color: Color(0xff6100FF),
-                                  fontWeight: FontWeight.w600),
-                              okStyle: TextStyle(
-                                  color: Color(0xff6100FF),
-                                  fontWeight: FontWeight.w600),
-                              minuteInterval: TimePickerInterval.FIVE,
-                              onChangeDateTime: (DateTime dateTime) {
-                                if (_time != null) {
-                                  DateTime parsedTime = DateFormat.jm()
-                                      .parse(_time.format(context).toString());
-                                  String formattedTime =
-                                  DateFormat('HH:mm').format(parsedTime);
-                                  setState(() {
-                                    timeend.text = formattedTime;
-                                  });
-                                }
-                              },
-                            ),
-                          );
-                        }),
-                        cursorColor: Colors.black,
-                        decoration: getDecoration("Closing", true)),
-                  ),
-                  SizedBox(width: 30),
-                ],
+              //Zip/Postal Code TextField --------------------------------------
+              labelText('Zip/Postal Code'),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
+                child: TextFormField(
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value!.isEmpty ||
+                        !RegExp(r'^[0-9]{6}$').hasMatch(value)) {
+                      return 'Enter Correct Zip/Postal Code';
+                    } else {
+                      return null;
+                    }
+                  },
+                  // maxLines: lines,
+                  enableSuggestions: true,
+                  cursorColor: Colors.black,
+                  style: TextStyle(fontSize: 16, color: Colors.black),
+                  decoration: getDecoration("xxxxxx", false),
+                ),
               ),
-
               //Save Profile Button --------------------------------------------
               Padding(
-                padding: const EdgeInsets.fromLTRB(30, 35, 30, 1),
+                padding: const EdgeInsets.fromLTRB(30, 15, 30, 1),
                 child: SizedBox(
                   height: 50,
                   child: ElevatedButton(
@@ -645,7 +585,7 @@ class _FormPageState extends State<FormPage> {
                                                   fontSize: 20),
                                             ),
                                             content: Text(
-                                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pharetra mauris vitae bibendum maximus. Nunc vel ligula non urna semper convallis vel nec libero. Mauris ut fringilla risus. Morbi cursus nulla nec ex mattis lobortis. Nulla facilisi. Morbi a libero tellus. Praesent vehicula felis at elit posuere placerat. Morbi vitae molestie justo.',
+                                              '\u2022The app may collect personal information, and users should review the privacy policy for details.\n\u2022Users are responsible for meeting minimum device requirements and complying with applicable laws.\n\u2022The app may contain links to third-party sites, and users must agree to payment terms for premium features.\n\u2022The app reserves the right to modify or terminate features, and users must comply with usage guidelines.\n\u2022The app may use tracking technologies and send notifications, and users can manage preferences.\n\u2022By using the app, users agree to these terms and conditions and the privacy policy. ',
                                               style: TextStyle(
                                                   color: Colors.grey.shade600,
                                                   fontSize: 14),
