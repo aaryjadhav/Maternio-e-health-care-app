@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternio_1/Main%20screens/profile_selection.dart';
 import '../widgets/customized_button.dart';
 import '../widgets/customized_textfield.dart';
 import '../widgets/square_title.dart';
@@ -39,8 +40,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       "jointTime": DateTime.now().toString(),
       "uid": FirebaseAuth.instance.currentUser?.uid,
     });
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MyHomePage(title: "hello",)));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => ProfileSelection()));
   }
 
   @override
@@ -152,23 +153,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SquareTitle(imagePath: 'assets/facebook.png'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    SquareTitle(imagePath: 'assets/google.png'),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    SquareTitle(imagePath: 'assets/apple.png'),
-                  ],
                 ),
                 SizedBox(
                   height: 40,

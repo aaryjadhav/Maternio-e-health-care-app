@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/Main%20screens/forgot_password.dart';
+import 'package:maternio_1/Main%20screens/profile_selection.dart';
 import 'package:maternio_1/Main%20screens/sign_up.dart';
 
 import '../widgets/customized_button.dart';
@@ -26,9 +27,10 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim());
 
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MyHomePage(title: "hello",)));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => ProfileSelection()));
   }
+
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -72,10 +74,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   isPassword: true,
                 ),
                 InkWell(
-                  onTap: (){ Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ForgotPassScreen()));},
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ForgotPassScreen()));
+                  },
                   child: Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
@@ -96,8 +100,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   textColor: Colors.white,
                   onPressed: () {
                     login();
-                   // Navigator.push(context,
-                   //     MaterialPageRoute(builder: (context) => LoginScreen()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
                 ),
                 Padding(
@@ -139,13 +143,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       width: 20,
                     ),
                     InkWell(
-                        onTap: (){},
+                        onTap: () {},
                         child: SquareTitle(imagePath: 'assets/google.png')),
                     SizedBox(
                       width: 20,
                     ),
                     InkWell(
-                        onTap: (){},
+                        onTap: () {},
                         child: SquareTitle(imagePath: 'assets/apple.png')),
                   ],
                 ),
