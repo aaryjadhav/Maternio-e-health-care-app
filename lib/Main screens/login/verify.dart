@@ -46,7 +46,7 @@ class _MyVerifyState extends State<MyVerify> {
     );
     var code="";
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.purple,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -125,7 +125,7 @@ class _MyVerifyState extends State<MyVerify> {
                         await auth.signInWithCredential(credential);
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) => main_page()));
-
+                        createUser(phoneNo: FirebaseAuth.instance.currentUser!.phoneNumber.toString());
                       }
 
                       catch(e)
@@ -141,11 +141,8 @@ class _MyVerifyState extends State<MyVerify> {
                 children: [
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          'phone',
-                              (route) => false,
-                        );
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => MyPhone()));
                       },
                       child: const Text(
                         "Edit Phone Number ?",
@@ -158,5 +155,24 @@ class _MyVerifyState extends State<MyVerify> {
         ),
       ),
     );
+  }
+  Future createUser({required String phoneNo}) async{
+
+    final docUser= FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid.toString());
+
+    // If you want, you can put the code inside of doc() in another global string and write the variable name here.
+
+    final json = {
+      'Phone No.' : phoneNo,
+      'Date of login': DateTime.now(),
+      'UID': FirebaseAuth.instance.currentUser!.uid.toString(),
+    };
+    try {
+      await docUser.set(json);
+      Navigator.pushNamed(context, '/main2');
+    }on FirebaseException catch(e)
+    {
+      print(e);
+    }
   }
 }
