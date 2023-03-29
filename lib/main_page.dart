@@ -6,6 +6,7 @@ import 'package:maternio_1/Main%20screens/welcome_screen.dart';
 
 import 'Additional Info/pregw_week_info.dart';
 import 'Main screens/home.dart';
+import 'Main screens/profile_selection.dart';
 
 
 class main_page extends StatefulWidget {
@@ -25,13 +26,13 @@ class _main_pageState extends State<main_page> {
           {
             if(snapshot.hasData)
             {
-              // if(FirebaseAuth.instance.currentUser!.displayName==null){
-              //   return PregWeekInfo();
-              //
-              // }
-              // else{
-              //   return HomePage();
-              // }
+               if(FirebaseAuth.instance.currentUser!.displayName==null){
+                return ProfileSelection();
+
+               }
+               else{
+                return HomePage();
+               }
               //uncomment this and remove the below line for preg page to come
               return HomePage();
 

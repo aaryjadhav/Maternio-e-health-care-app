@@ -1,4 +1,6 @@
 // ignore_for_file: prefer_const_constructors, file_names, prefer_final_fields, use_build_context_synchronously, deprecated_member_use, body_might_complete_normally_nullable, unnecessary_null_comparison, sort_child_properties_last, prefer_const_literals_to_create_immutables
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -14,12 +16,17 @@ class BabyFormPage extends StatefulWidget {
 }
 
 class _BabyFormPageState extends State<BabyFormPage> {
+  TextEditingController _name = TextEditingController();
   TextEditingController _date = TextEditingController();
   TextEditingController timestrt = TextEditingController();
   TextEditingController timeend = TextEditingController();
+
   bool agree = false;
   final formkey = GlobalKey<FormState>();
   Time _time = Time(hour: 11, minute: 30);
+
+  late int flag;
+
 
   void onTimeChanged(Time newTime) {
     setState(() {
@@ -158,6 +165,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _name,
                   validator: (value) {
                     if (value!.isEmpty ||
                         !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
@@ -238,6 +246,9 @@ class _BabyFormPageState extends State<BabyFormPage> {
                     child: GestureDetector(
                       onTap: () {
                         _handleChange('male');
+                        setState(() {
+                          flag=0;
+                        });
                       },
                       child: Container(
                         height: 46,
@@ -277,6 +288,9 @@ class _BabyFormPageState extends State<BabyFormPage> {
                     child: GestureDetector(
                         onTap: () {
                           _handleChange('female');
+                          setState(() {
+                            flag=1;
+                          });
                         },
                         child: Container(
                           height: 46,
@@ -521,12 +535,14 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onPressed: agree
                           ? () {
                         setState(() {
-                          if (formkey.currentState!.validate()) {
+                           if (formkey.currentState!.validate()) {
                              Navigator.push(
                                  context,
                                MaterialPageRoute(
                                     builder: (context) => HomePage()));
-                          }
+                           }
+                          updatebaby(name: _name.text.toString(),date: _date.text.toString(),gender: flag==0?'male':'female');
+                          FirebaseAuth.instance.currentUser!.updateDisplayName(_name.text.toString());
                         });
                       }
                           : null,
@@ -618,6 +634,28 @@ class _BabyFormPageState extends State<BabyFormPage> {
         ),
       ),
     );
+  }
+  Future updatebaby({required String name,required String date,required String gender}) async{
+
+    final docUser= FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid.toString());
+
+    // If you want, you can put the code inside of doc() in another global string and write the variable name here.
+
+    final json = {
+      'Type of Customer':'Baby Info',
+      'Baby Name' : name,
+      'D-O-B':date,
+      'Gender':gender,
+      'Date of login': DateTime.now(),
+      'UID': FirebaseAuth.instance.currentUser!.uid.toString(),
+    };
+    try {
+      await docUser.set(json);
+      Navigator.pushNamed(context, '/main2');
+    }on FirebaseException catch(e)
+    {
+      print(e);
+    }
   }
 
   //Widget ---------------------------------------------------------------------

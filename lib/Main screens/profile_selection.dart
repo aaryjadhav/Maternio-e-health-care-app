@@ -109,7 +109,7 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                                       flex: 3,
                                       child: InkWell(
                                         onTap: () {
-                                          Navigator.pushReplacement(
+                                          Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
@@ -241,7 +241,7 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                               flex: 2,
                               child: InkWell(
                                 onTap: () {
-                                  Navigator.pushReplacement(
+                                  Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
