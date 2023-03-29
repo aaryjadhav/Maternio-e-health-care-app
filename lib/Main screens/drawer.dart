@@ -1,10 +1,12 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/Additional%20Info/pregw_week_info.dart';
 import 'package:maternio_1/Babysitter/babysittersearch.dart';
 import 'package:maternio_1/Main%20screens/home.dart';
+import 'package:maternio_1/Main%20screens/login/phone.dart';
 import 'package:maternio_1/doctor/doctorsearch.dart';
 
 import '../Pregnant Women/pred_diet.dart';
@@ -27,7 +29,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
         children: [
           UserAccountsDrawerHeader(
             accountName: Text("Devang"),
-            accountEmail: Text("devangdi@gmail.com"),
+            accountEmail: Text(FirebaseAuth.instance.currentUser!.phoneNumber.toString()),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
@@ -106,8 +108,9 @@ class _Drawer_screenState extends State<Drawer_screen> {
               style: TextStyle(fontSize: 20),
             ),
             onTap: () {
+              FirebaseAuth.instance.signOut();
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => PregWeekInfo()));
+                  MaterialPageRoute(builder: (context) => MyPhone()));
             },
           ),
         ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:maternio_1/Main%20screens/welcome_screen.dart';
+import 'package:maternio_1/main_page.dart';
 
 import 'home.dart';
 
@@ -38,15 +39,10 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
                 _controller
               ..duration = compos.duration
               ..forward().then((value) async {
-                if (await FirebaseAuth.instance.currentUser != null) {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => HomePage()));
-                } else {
+
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => WelcomeScreen()));
-                }
+                      MaterialPageRoute(builder: (context) => main_page()));
+
               });
           }),
           Center(
