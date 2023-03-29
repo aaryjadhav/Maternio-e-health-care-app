@@ -28,7 +28,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text("Devang"),
+            accountName: Text(FirebaseAuth.instance.currentUser!.displayName.toString()),
             accountEmail: Text(FirebaseAuth.instance.currentUser!.phoneNumber.toString()),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(

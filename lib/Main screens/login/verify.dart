@@ -158,7 +158,7 @@ class _MyVerifyState extends State<MyVerify> {
   }
   Future createUser({required String phoneNo}) async{
 
-    final docUser= FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid.toString());
+    final docUser= FirebaseFirestore.instance.collection('usersLogin').doc(FirebaseAuth.instance.currentUser!.uid.toString());
 
     // If you want, you can put the code inside of doc() in another global string and write the variable name here.
 
@@ -169,7 +169,6 @@ class _MyVerifyState extends State<MyVerify> {
     };
     try {
       await docUser.set(json);
-      Navigator.pushNamed(context, '/main2');
     }on FirebaseException catch(e)
     {
       print(e);

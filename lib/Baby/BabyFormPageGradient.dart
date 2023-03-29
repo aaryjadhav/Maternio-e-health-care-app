@@ -541,9 +541,10 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                MaterialPageRoute(
                                     builder: (context) => HomePage()));
                            }
-                          updatebaby(name: _name.text.toString(),date: _date.text.toString(),gender: flag==0?'male':'female');
-                          FirebaseAuth.instance.currentUser!.updateDisplayName(_name.text.toString());
+
                         });
+                        updatebaby(name: _name.text.toString(),date: _date.text.toString(),gender: flag==0?'male':'female');
+                        FirebaseAuth.instance.currentUser!.updateDisplayName(_name.text.toString());
                       }
                           : null,
                       style: ElevatedButton.styleFrom(
@@ -637,7 +638,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
   }
   Future updatebaby({required String name,required String date,required String gender}) async{
 
-    final docUser= FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid.toString());
+    final docUser= FirebaseFirestore.instance.collection('usersData').doc(FirebaseAuth.instance.currentUser!.uid.toString());
 
     // If you want, you can put the code inside of doc() in another global string and write the variable name here.
 
@@ -651,7 +652,6 @@ class _BabyFormPageState extends State<BabyFormPage> {
     };
     try {
       await docUser.set(json);
-      Navigator.pushNamed(context, '/main2');
     }on FirebaseException catch(e)
     {
       print(e);
