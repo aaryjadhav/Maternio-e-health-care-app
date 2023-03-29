@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternio_1/About%20Us/aboutus.dart';
 import 'package:maternio_1/Babysitter/baby_profile.dart';
 import 'package:maternio_1/Baby/BabyFormPageGradient.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -270,7 +271,7 @@ class _HomePageState extends State<Profile> {
                       ),
                       SizedBox(width: 13),
                       Text(
-                        'About App',
+                        'About Us',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
@@ -279,7 +280,12 @@ class _HomePageState extends State<Profile> {
                       //---------
                       Spacer(),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AboutUs()));
+                          },
                           icon: Icon(Icons.arrow_forward_ios_outlined,
                               color: Colors.black, size: 16)),
                       SizedBox(width: 16)

@@ -57,6 +57,10 @@ dependencies:
   youtube_player_flutter: ^8.1.2
   get: ^4.6.5
   pinput: ^2.2.31
+  drop_shadow_image: ^0.9.1
+  expandable_text: ^2.3.0
+  dependencies:
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:
