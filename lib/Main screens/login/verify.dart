@@ -69,9 +69,9 @@ class _MyVerifyState extends State<MyVerify> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/login_logo.png',
-                width: 100,
-                height: 100,
+                'assets/logo.png',
+                width: 300,
+                height: 300,
               ),
               const SizedBox(
                 height: 25,

@@ -1,4 +1,6 @@
 // ignore_for_file: prefer_const_constructors, file_names, prefer_final_fields, use_build_context_synchronously, deprecated_member_use, body_might_complete_normally_nullable, unnecessary_null_comparison, sort_child_properties_last, prefer_const_literals_to_create_immutables
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -14,9 +16,21 @@ class PregnantFormPage extends StatefulWidget {
 }
 
 class _PregFormPageState extends State<PregnantFormPage> {
+  TextEditingController _name = TextEditingController();
   TextEditingController _date = TextEditingController();
+  TextEditingController _age = TextEditingController();
+  TextEditingController _pregbloodgroup = TextEditingController();
+  TextEditingController _pregheight = TextEditingController();
+  TextEditingController _pregweight = TextEditingController();
+  TextEditingController _pregallergy = TextEditingController();
+  TextEditingController _spousename = TextEditingController();
+  TextEditingController _spousebloodgroup = TextEditingController();
+  TextEditingController _phonenumber = TextEditingController();
+  TextEditingController _resiaddress = TextEditingController();
+  TextEditingController _postalcode = TextEditingController();
   TextEditingController timestrt = TextEditingController();
   TextEditingController timeend = TextEditingController();
+  TextEditingController _allergy=TextEditingController();
   bool agree = false;
   final formkey = GlobalKey<FormState>();
   Time _time = Time(hour: 11, minute: 30);
@@ -27,6 +41,8 @@ class _PregFormPageState extends State<PregnantFormPage> {
     });
   }
 
+  late int flag;
+
   @override
   void initState() {
     timestrt.text = "";
@@ -35,6 +51,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
   }
 
   String _radioBtnVal = "male";
+
   _handleChange(String? value) {
     setState(() {
       _radioBtnVal = value.toString();
@@ -54,7 +71,10 @@ class _PregFormPageState extends State<PregnantFormPage> {
                 children: [
                   ClipPath(
                     child: Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: MediaQuery
+                          .of(context)
+                          .size
+                          .width,
                       height: 200,
                       // color: Colors.red,
                       decoration: BoxDecoration(
@@ -156,6 +176,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _name,
                   validator: (value) {
                     if (value!.isEmpty ||
                         !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
@@ -236,6 +257,9 @@ class _PregFormPageState extends State<PregnantFormPage> {
                     child: GestureDetector(
                       onTap: () {
                         _handleChange('female');
+                        setState(() {
+                          flag = 0;
+                        });
                       },
                       child: Container(
                         height: 46,
@@ -275,6 +299,9 @@ class _PregFormPageState extends State<PregnantFormPage> {
                     child: GestureDetector(
                         onTap: () {
                           _handleChange('other');
+                          setState(() {
+                            flag = 1;
+                          });
                         },
                         child: Container(
                           height: 46,
@@ -317,18 +344,21 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _age,
+                  maxLines: 1,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Age';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Age';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Age(25 Year 1 Month)", false),
+                  decoration:
+                  getDecoration("Enter Your Age", false),
                 ),
               ),
               //Blood Group------------------------------------------------
@@ -336,18 +366,21 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _pregbloodgroup,
+                  maxLines: 1,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Blood Group';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Blood Group';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Blood Group (B +ve)", false),
+                  decoration:
+                  getDecoration("Enter Your Blood Group(B+ ve)", false),
                 ),
               ),
               //Height---------------------------
@@ -355,18 +388,21 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _pregheight,
+                  maxLines: 1,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Height';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Height';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Height (5''5 foot')", false),
+                  decoration:
+                  getDecoration("Enter Your Height(5'5'' Foot)", false),
                 ),
               ),
               //Weight------------------------------------------------
@@ -374,18 +410,21 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _pregweight,
+                  maxLines: 1,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Weight';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Weight';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Weight (2.5 kg)", false),
+                  decoration:
+                  getDecoration("Enter Your Weight(2.5 kg)", false),
                 ),
               ),
               //Allergy------------------------------------------------
@@ -393,7 +432,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 35, bottom: 1),
-                  child: Text("Allergy",style: TextStyle(
+                  child: Text("Allergy", style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: Colors.black)),
@@ -402,6 +441,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _allergy,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
@@ -413,18 +453,21 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _spousename,
+                  maxLines: 1,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Name';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Spouse Name';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Spouse Name", false),
+                  decoration:
+                  getDecoration("Enter Your Spouse Name", false),
                 ),
               ),
               //Spouse Blood Group--------------------------------
@@ -432,18 +475,21 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _spousebloodgroup,
+                  maxLines: 1,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Blood Group';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Spouse Blood Group';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Spouse Blood Group(B +ve)", false),
+                  decoration:
+                  getDecoration("Enter Spouse Blood Group(B+ve)", false),
                 ),
               ),
               //Mobile Number TextField ----------------------------------------
@@ -451,6 +497,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _phonenumber,
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value!.isEmpty ||
@@ -473,6 +520,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _resiaddress,
                   maxLines: 2,
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -495,6 +543,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _postalcode,
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value!.isEmpty ||
@@ -521,12 +570,27 @@ class _PregFormPageState extends State<PregnantFormPage> {
                           ? () {
                         setState(() {
                           if (formkey.currentState!.validate()) {
-                             Navigator.push(
-                                 context,
-                               MaterialPageRoute(
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
                                     builder: (context) => HomePage()));
                           }
                         });
+                        updatepregnantwomen(
+                            postalcode: _postalcode.text.toString(),
+                            name: _name.text.toString(),
+                            date: _date.text.toString(),
+                            gender:flag == 0 ? 'female' : 'other',
+                            pregnantwomenage: _age.text.toString(),
+                            pregnantwomenheight: _pregheight.text.toString(),
+                            pregnantwomenweight: _pregweight.text.toString(),
+                            allergy: _allergy.text.toString(),
+                            spousename: _spousename.text.toString(),
+                            pregnantbloodgroup: _pregbloodgroup.text.toString(),
+                            spousebloodgroup: _spousebloodgroup.text.toString(),
+                            phonenumber: _phonenumber.text.toString(),
+                            resiaddress: _resiaddress.text.toString(),
+                        );
                       }
                           : null,
                       style: ElevatedButton.styleFrom(
@@ -598,7 +662,8 @@ class _PregFormPageState extends State<PregnantFormPage> {
                                                   child: Text(
                                                     'Close',
                                                     style: TextStyle(
-                                                        color: Color(0xff6100FF)),
+                                                        color: Color(
+                                                            0xff6100FF)),
                                                   ))
                                             ],
                                           );
@@ -617,6 +682,50 @@ class _PregFormPageState extends State<PregnantFormPage> {
         ),
       ),
     );
+  }
+
+  Future updatepregnantwomen({required String postalcode,
+    required String name,
+    required String date,
+    required String gender,
+    required String pregnantwomenage,
+    required String pregnantwomenheight,
+    required String pregnantwomenweight,
+    required String allergy,
+    required String spousename,
+    required String pregnantbloodgroup,
+    required String spousebloodgroup,
+    required String phonenumber,
+    required String resiaddress}) async {
+    final docUser = FirebaseFirestore.instance
+        .collection('usersData')
+        .doc(FirebaseAuth.instance.currentUser!.uid.toString());
+
+    // If you want, you can put the code inside of doc() in another global string and write the variable name here.
+
+    final json = {
+      'Type of Customer': 'Pregnant Women Info',
+      'Pregnant Women Name': name,
+      'D-O-B': date,
+      'Gender': gender,
+      'Pregnant Women Age': pregnantwomenage,
+      'Pregnant Women Blood Group': pregnantbloodgroup,
+      'Pregnant Women Height': pregnantwomenheight,
+      'Pregnant Women Weight': pregnantwomenweight,
+      'Allergy': allergy,
+      'Spouse Name': spousename,
+      'Spouse Blood Group': spousebloodgroup,
+      'Contact Number': phonenumber,
+      'Residential Address': resiaddress,
+      'Postal Code': postalcode,
+      'Date of login': DateTime.now(),
+      'UID': FirebaseAuth.instance.currentUser!.uid.toString(),
+    };
+    try {
+      await docUser.set(json);
+    } on FirebaseException catch (e) {
+      print(e);
+    }
   }
 
   //Widget ---------------------------------------------------------------------
@@ -683,6 +792,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
 //Semicircle Clippath ----------------------------------------------------------
 class CustomClipPath extends CustomClipper<Path> {
   var radius = 10.0;
+
   @override
   Path getClip(Size size) {
     Path path = Path();

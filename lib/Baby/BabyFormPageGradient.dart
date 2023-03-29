@@ -18,6 +18,16 @@ class BabyFormPage extends StatefulWidget {
 class _BabyFormPageState extends State<BabyFormPage> {
   TextEditingController _name = TextEditingController();
   TextEditingController _date = TextEditingController();
+  TextEditingController _babyage = TextEditingController();
+  TextEditingController _babyheight = TextEditingController();
+  TextEditingController _babyweight = TextEditingController();
+  TextEditingController _allergy = TextEditingController();
+  TextEditingController _bloodgroup = TextEditingController();
+  TextEditingController _mothername = TextEditingController();
+  TextEditingController _fathername = TextEditingController();
+  TextEditingController _parentnumber = TextEditingController();
+  TextEditingController _resiaddress = TextEditingController();
+  TextEditingController _postalcode = TextEditingController();
   TextEditingController timestrt = TextEditingController();
   TextEditingController timeend = TextEditingController();
 
@@ -26,7 +36,6 @@ class _BabyFormPageState extends State<BabyFormPage> {
   Time _time = Time(hour: 11, minute: 30);
 
   late int flag;
-
 
   void onTimeChanged(Time newTime) {
     setState(() {
@@ -42,6 +51,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
   }
 
   String _radioBtnVal = "male";
+
   _handleChange(String? value) {
     setState(() {
       _radioBtnVal = value.toString();
@@ -58,9 +68,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
             children: [
               //----------------------------------------------------------------
               Stack(
-
                 children: [
-
                   ClipPath(
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -142,7 +150,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                 color: Color(0xff6DAC67),
                                 shape: BoxShape.circle,
                                 border:
-                                Border.all(width: 2, color: Colors.white),
+                                    Border.all(width: 2, color: Colors.white),
                               ),
                               child: IconButton(
                                 padding: EdgeInsets.zero,
@@ -202,11 +210,11 @@ class _BabyFormPageState extends State<BabyFormPage> {
                         context: context,
                         //made so that doctor minimum age should be 20
                         initialDate:
-                        DateTime(date.year - 20, date.month, date.day),
+                            DateTime(date.year - 20, date.month, date.day),
                         firstDate:
-                        DateTime(date.year - 80, date.month, date.day),
+                            DateTime(date.year - 80, date.month, date.day),
                         lastDate:
-                        DateTime(date.year - 20, date.month, date.day),
+                            DateTime(date.year - 20, date.month, date.day),
                         helpText: 'Select Your Birth Date',
                         builder: (context, child) {
                           return Theme(
@@ -220,7 +228,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                 textButtonTheme: TextButtonThemeData(
                                   style: TextButton.styleFrom(
                                     primary:
-                                    Color(0xff6100FF), // button text color
+                                        Color(0xff6100FF), // button text color
                                   ),
                                 ),
                               ),
@@ -247,7 +255,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onTap: () {
                         _handleChange('male');
                         setState(() {
-                          flag=0;
+                          flag = 0;
                         });
                       },
                       child: Container(
@@ -289,7 +297,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                         onTap: () {
                           _handleChange('female');
                           setState(() {
-                            flag=1;
+                            flag = 1;
                           });
                         },
                         child: Container(
@@ -328,23 +336,26 @@ class _BabyFormPageState extends State<BabyFormPage> {
                 ],
               ),
               SizedBox(height: 12),
-                  //Age---------------------------
+              //Age---------------------------
               labelText("Baby's Age"),
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _babyage,
+                  maxLines: 2,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Age';
+                    if (value!.isEmpty) {
+                      return "Please Enter Baby's Age";
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Baby's Age(1 Month/1 Year 1 Month)", false),
+                  decoration: getDecoration(
+                      "Enter Baby's Age(1 Month/1 Year-1 Month)", false),
                 ),
               ),
               //Height---------------------------
@@ -352,18 +363,21 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _babyheight,
+                  maxLines: 2,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Height';
+                    if (value!.isEmpty) {
+                      return "Please Enter Height";
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Baby's Height (5''5 foot')", false),
+                  decoration:
+                      getDecoration("Enter Baby's Height(5'5'' Foot)", false),
                 ),
               ),
               //Weight------------------------------------------------
@@ -371,18 +385,21 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _babyweight,
+                  maxLines: 2,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
+                    if (value!.isEmpty) {
                       return 'Enter Correct Weight';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Baby's Weight (2.5 kg)", false),
+                  decoration:
+                      getDecoration("Enter Baby's Weight(2.5 kg)", false),
                 ),
               ),
               //Allergy------------------------------------------------
@@ -390,19 +407,22 @@ class _BabyFormPageState extends State<BabyFormPage> {
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 35, bottom: 1),
-                  child: Text("Allergy",style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black)),
+                  child: Text("Allergy",
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black)),
                 ),
               ),
-                    Padding(
+              Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _allergy,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Baby's Allergy(If Any/None)", false),
+                  decoration:
+                      getDecoration("Baby's Allergy(If Any/None)", false),
                 ),
               ),
               //Blood Group------------------------------------------------
@@ -410,18 +430,20 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _bloodgroup,
+                  maxLines: 2,
                   validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Blood Group';
+                    if (value!.isEmpty) {
+                      return 'Please Enter Blood Group';
                     } else {
                       return null;
                     }
                   },
+                  // maxLines: lines,
                   enableSuggestions: true,
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Baby's Blood Group (B +ve)", false),
+                  decoration: getDecoration("Enter Baby's Blood Group", false),
                 ),
               ),
               //Mother Name------------------------
@@ -429,6 +451,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _mothername,
                   validator: (value) {
                     if (value!.isEmpty ||
                         !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
@@ -448,6 +471,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _fathername,
                   validator: (value) {
                     if (value!.isEmpty ||
                         !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
@@ -467,6 +491,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _parentnumber,
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value!.isEmpty ||
@@ -488,6 +513,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _resiaddress,
                   maxLines: 2,
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -501,7 +527,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                   cursorColor: Colors.black,
                   style: TextStyle(fontSize: 16, color: Colors.black),
                   decoration:
-                  getDecoration("Enter Your Residential Address", false),
+                      getDecoration("Enter Your Residential Address", false),
                 ),
               ),
               //Zip/Postal Code TextField --------------------------------------
@@ -509,6 +535,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
+                  controller: _postalcode,
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value!.isEmpty ||
@@ -534,18 +561,32 @@ class _BabyFormPageState extends State<BabyFormPage> {
                   child: ElevatedButton(
                       onPressed: agree
                           ? () {
-                        setState(() {
-                           if (formkey.currentState!.validate()) {
-                             Navigator.push(
-                                 context,
-                               MaterialPageRoute(
-                                    builder: (context) => HomePage()));
-                           }
-
-                        });
-                        updatebaby(name: _name.text.toString(),date: _date.text.toString(),gender: flag==0?'male':'female');
-                        FirebaseAuth.instance.currentUser!.updateDisplayName(_name.text.toString());
-                      }
+                              setState(() {
+                                if (formkey.currentState!.validate()) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomePage()));
+                                }
+                              });
+                              updatebaby(
+                                  name: _name.text.toString(),
+                                  date: _date.text.toString(),
+                                  gender: flag == 0 ? 'male' : 'female',
+                                  babyage: _babyage.text.toString(),
+                                  babyheight: _babyheight.text.toString(),
+                                  babyweight: _babyweight.text.toString(),
+                                  allergy: _allergy.text.toString(),
+                                  bloodgroup: _bloodgroup.text.toString(),
+                                  mothername: _mothername.text.toString(),
+                                fathername: _fathername.text.toString(),
+                                parentnumber: _parentnumber.text.toString(),
+                                resiaddress: _resiaddress.text.toString(),
+                                postalcode: _postalcode.text.toString(),
+                              );
+                              FirebaseAuth.instance.currentUser!
+                                  .updateDisplayName(_name.text.toString());
+                            }
                           : null,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xff6100FF),
@@ -584,49 +625,49 @@ class _BabyFormPageState extends State<BabyFormPage> {
                   Expanded(
                       child: RichText(
                           text: TextSpan(children: [
-                            TextSpan(
-                                text: 'I have read and accepted ',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.grey.shade800)),
-                            TextSpan(
-                                text: 'Terms & Conditions',
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                            title: Text(
-                                              'Terms & Conditions',
-                                              style: TextStyle(
-                                                  color: Color(0xff6100FF),
-                                                  fontSize: 20),
-                                            ),
-                                            content: Text(
-                                              '\u2022The app may collect personal information, and users should review the privacy policy for details.\n\u2022Users are responsible for meeting minimum device requirements and complying with applicable laws.\n\u2022The app may contain links to third-party sites, and users must agree to payment terms for premium features.\n\u2022The app reserves the right to modify or terminate features, and users must comply with usage guidelines.\n\u2022The app may use tracking technologies and send notifications, and users can manage preferences.\n\u2022By using the app, users agree to these terms and conditions and the privacy policy. ',
-                                              style: TextStyle(
-                                                  color: Colors.grey.shade600,
-                                                  fontSize: 14),
-                                            ),
-                                            actions: [
-                                              TextButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: Text(
-                                                    'Close',
-                                                    style: TextStyle(
-                                                        color: Color(0xff6100FF)),
-                                                  ))
-                                            ],
-                                          );
-                                        });
-                                  },
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: Color(0xff6100FF),
-                                    fontWeight: FontWeight.w600))
-                          ]))),
+                    TextSpan(
+                        text: 'I have read and accepted ',
+                        style: TextStyle(
+                            fontSize: 12, color: Colors.grey.shade800)),
+                    TextSpan(
+                        text: 'Terms & Conditions',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text(
+                                      'Terms & Conditions',
+                                      style: TextStyle(
+                                          color: Color(0xff6100FF),
+                                          fontSize: 20),
+                                    ),
+                                    content: Text(
+                                      '\u2022The app may collect personal information, and users should review the privacy policy for details.\n\u2022Users are responsible for meeting minimum device requirements and complying with applicable laws.\n\u2022The app may contain links to third-party sites, and users must agree to payment terms for premium features.\n\u2022The app reserves the right to modify or terminate features, and users must comply with usage guidelines.\n\u2022The app may use tracking technologies and send notifications, and users can manage preferences.\n\u2022By using the app, users agree to these terms and conditions and the privacy policy. ',
+                                      style: TextStyle(
+                                          color: Colors.grey.shade600,
+                                          fontSize: 14),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(
+                                            'Close',
+                                            style: TextStyle(
+                                                color: Color(0xff6100FF)),
+                                          ))
+                                    ],
+                                  );
+                                });
+                          },
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xff6100FF),
+                            fontWeight: FontWeight.w600))
+                  ]))),
                 ],
               )
               //----------------------------------------------------------------
@@ -636,24 +677,48 @@ class _BabyFormPageState extends State<BabyFormPage> {
       ),
     );
   }
-  Future updatebaby({required String name,required String date,required String gender}) async{
 
-    final docUser= FirebaseFirestore.instance.collection('usersData').doc(FirebaseAuth.instance.currentUser!.uid.toString());
+  Future updatebaby(
+      {required String postalcode,
+      required String name,
+      required String date,
+      required String gender,
+      required String babyage,
+      required String babyheight,
+      required String babyweight,
+      required String allergy,
+      required String bloodgroup,
+      required String mothername,
+      required String fathername,
+      required String parentnumber,
+      required String resiaddress}) async {
+    final docUser = FirebaseFirestore.instance
+        .collection('usersData')
+        .doc(FirebaseAuth.instance.currentUser!.uid.toString());
 
     // If you want, you can put the code inside of doc() in another global string and write the variable name here.
 
     final json = {
-      'Type of Customer':'Baby Info',
-      'Baby Name' : name,
-      'D-O-B':date,
-      'Gender':gender,
+      'Type of Customer': 'Baby Info',
+      'Baby Name': name,
+      'Baby Age': babyage,
+      'Baby Height': babyheight,
+      'Baby Weight': babyweight,
+      'Allergy': allergy,
+      'Baby Blood Group': bloodgroup,
+      'Mother Name': mothername,
+      'Father Name': fathername,
+      'Parent Contact Number': parentnumber,
+      'Residential Address': resiaddress,
+      'Postal Code': postalcode,
+      'D-O-B': date,
+      'Gender': gender,
       'Date of login': DateTime.now(),
       'UID': FirebaseAuth.instance.currentUser!.uid.toString(),
     };
     try {
       await docUser.set(json);
-    }on FirebaseException catch(e)
-    {
+    } on FirebaseException catch (e) {
       print(e);
     }
   }
@@ -668,10 +733,10 @@ class _BabyFormPageState extends State<BabyFormPage> {
         suffixIcon: suficon == false
             ? null
             : Icon(
-          Icons.arrow_drop_down,
-          color: Colors.grey.shade600,
-          size: 28,
-        ),
+                Icons.arrow_drop_down,
+                color: Colors.grey.shade600,
+                size: 28,
+              ),
         enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.shade600, width: 1),
             borderRadius: BorderRadius.circular(10)),
@@ -700,19 +765,19 @@ class _BabyFormPageState extends State<BabyFormPage> {
         alignment: Alignment.centerLeft,
         child: RichText(
             text: TextSpan(children: <TextSpan>[
-              TextSpan(
-                  text: labeltext,
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black)),
-              TextSpan(
-                  text: '*',
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff6100FF))),
-            ])),
+          TextSpan(
+              text: labeltext,
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black)),
+          TextSpan(
+              text: '*',
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff6100FF))),
+        ])),
       ),
     );
   }
@@ -722,6 +787,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
 //Semicircle Clippath ----------------------------------------------------------
 class CustomClipPath extends CustomClipper<Path> {
   var radius = 10.0;
+
   @override
   Path getClip(Size size) {
     Path path = Path();

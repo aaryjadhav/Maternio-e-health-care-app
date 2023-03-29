@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/About%20Us/aboutus.dart';
 import 'package:maternio_1/Babysitter/baby_profile.dart';
 import 'package:maternio_1/Baby/BabyFormPageGradient.dart';
+import 'package:maternio_1/Pregnant%20Women/PregnantFormPageGradient.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 
@@ -125,7 +126,7 @@ class _HomePageState extends State<Profile> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => BabyFormPage()));
+                                    builder: (context) =>PregnantFormPage()));
                           },
                           icon: Icon(Icons.create_outlined,
                               color: Colors.white, size: 24)),
