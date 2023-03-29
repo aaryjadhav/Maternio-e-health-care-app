@@ -186,18 +186,18 @@ class _PregWeekInfoState extends State<PregWeekInfo> {
             ),
           ),
         ),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-              color: Colors.deepPurpleAccent.shade700,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.3),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(3, 2),
-                ),
-              ]
-          ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.purple.shade700,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.edit),
+            label: "hi"
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.edit),
+            label: "hi"
+            )
+          ],
         ),
       ),
     );

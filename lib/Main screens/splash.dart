@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:maternio_1/Main%20screens/welcome_screen.dart';
 import 'package:maternio_1/main_page.dart';
 
 import 'home.dart';
