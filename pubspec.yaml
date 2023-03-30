@@ -59,8 +59,7 @@ dependencies:
   pinput: ^2.2.31
   drop_shadow_image: ^0.9.1
   expandable_text: ^2.3.0
-  dependencies:
-  flutter_swiper: ^1.1.6
+  flutter_swiper_view: ^1.1.8
 
 dev_dependencies:
   flutter_test:

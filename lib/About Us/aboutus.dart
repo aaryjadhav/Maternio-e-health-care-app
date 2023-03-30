@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/About%20Us/constants.dart';
 import 'package:maternio_1/About%20Us/data.dart';
 import 'package:maternio_1/About%20Us/detail_page.dart';
 import 'package:maternio_1/About%20Us/expanded_widget.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
