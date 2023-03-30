@@ -23,8 +23,6 @@ class _BabyFormPageState extends State<BabyFormPage> {
   TextEditingController _babyweight = TextEditingController();
   TextEditingController _allergy = TextEditingController();
   TextEditingController _bloodgroup = TextEditingController();
-  TextEditingController _mothername = TextEditingController();
-  TextEditingController _fathername = TextEditingController();
   TextEditingController _parentnumber = TextEditingController();
   TextEditingController _resiaddress = TextEditingController();
   TextEditingController _postalcode = TextEditingController();
@@ -522,15 +520,15 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onPressed: agree
                           ? () {
                               setState(() {
-
+                                FirebaseAuth.instance.currentUser!
+                                    .updateDisplayName(_name.text.toString());
                                 if (formkey.currentState!.validate()) {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => HomePage()));
                                 }
-                                FirebaseAuth.instance.currentUser!
-                                    .updateDisplayName(_name.text.toString());
+
                                 updatebaby(
                                   name: _name.text.toString(),
                                   date: _date.text.toString(),
