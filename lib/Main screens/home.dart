@@ -5,6 +5,7 @@ import 'package:maternio_1/Baby/baby_massage.dart';
 import 'package:maternio_1/Babysitter/babysitter_profile.dart';
 import 'package:maternio_1/Babysitter/babysittersearch.dart';
 import 'package:maternio_1/Babysitter/bs_profile_others.dart';
+import 'package:maternio_1/Diet%20Week/diet_chart_preg.dart';
 import 'package:maternio_1/Main%20screens/Drawer.dart';
 import 'package:maternio_1/Pregnant%20Women/PregnantFormPageGradient.dart';
 import 'package:maternio_1/doctor/doctorsearch.dart';
@@ -564,17 +565,24 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           // mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 40, top: 20),
-                                  child: CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/diet.png'),
-                                    radius: 45,
+                            InkWell(onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => diet_chart()));
+                            },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 40, top: 20),
+                                    child: CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('assets/diet.png'),
+                                      radius: 45,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,

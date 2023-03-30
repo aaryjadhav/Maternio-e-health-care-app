@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +22,33 @@ class Drawer_screen extends StatefulWidget {
 }
 
 class _Drawer_screenState extends State<Drawer_screen> {
+  String imgsrc='';
+  void initState() {
+    super.initState();
+    getData();
+  }
+  Future getData() async{
+    await FirebaseFirestore.instance.collection("usersData").doc(FirebaseAuth.instance.currentUser!.uid.toString()).get().then((value) async{
+      setState((
+
+          ) {
+        if(value["Type of Customer"]=="Baby"){
+
+          imgsrc="assets/babypp.png";
+
+        }
+        else{
+
+          imgsrc="assets/pregnantpp.png";
+
+        }
+
+
+
+      });
+    });
+    // int currentValue=consumed;
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -33,7 +61,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
-                  "assets/doctorpp.png",
+                  imgsrc,
                   width: 100,
                   height: 100,
                 ),

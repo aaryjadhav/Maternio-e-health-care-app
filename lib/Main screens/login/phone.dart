@@ -33,7 +33,7 @@ class _MyPhoneState extends State<MyPhone> {
     // }
     //Uncomment the above code for integrating a loading screen
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.white,
       body: Container(
         margin: const EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
@@ -41,18 +41,14 @@ class _MyPhoneState extends State<MyPhone> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Image.asset(
-              //   'assets/login_logo.png',
-              //   width: 100,
-              //   height: 100,
-              // ),
+               Image.network("https://i.postimg.cc/90DryqfS/Untitled-design.gif"),
               //Add your logo here
               const SizedBox(
                 height: 25,
               ),
               const Text(
                 "Phone Verification",
-                style: const TextStyle(color: Colors.white,fontSize: 22, fontWeight: FontWeight.bold),
+                style: const TextStyle(color: Colors.deepPurpleAccent,fontSize: 22, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 10,
@@ -60,7 +56,7 @@ class _MyPhoneState extends State<MyPhone> {
               const Text(
                 "We need to register your phone before getting started!",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent,
                   fontSize: 16,
                 ),
                 textAlign: TextAlign.center,
@@ -71,7 +67,7 @@ class _MyPhoneState extends State<MyPhone> {
               Container(
                 height: 55,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.deepPurpleAccent,
                     border: Border.all(width: 1, color: Colors.grey),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(
@@ -83,6 +79,7 @@ class _MyPhoneState extends State<MyPhone> {
                     SizedBox(
                       width: 40,
                       child: TextField(
+                        style: TextStyle(color: Colors.white),
                         controller: countryController,
                         keyboardType: TextInputType.number,
                         decoration: const InputDecoration(
@@ -99,6 +96,7 @@ class _MyPhoneState extends State<MyPhone> {
                     ),
                     Expanded(
                         child: TextField(
+                          style: TextStyle(color: Colors.white),
                           onChanged: (value)
                           {
                             phone=value;
@@ -106,7 +104,9 @@ class _MyPhoneState extends State<MyPhone> {
                           keyboardType: TextInputType.phone,
                           decoration: const InputDecoration(
                             border: InputBorder.none,
+                            fillColor: Colors.white,
                             hintText: "Phone",
+                            hintStyle: TextStyle(color: Colors.white)
                           ),
                         ))
                   ],
@@ -120,7 +120,7 @@ class _MyPhoneState extends State<MyPhone> {
                 height: 45,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.blueAccent,
+                        primary: Colors.deepPurpleAccent,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () async{
@@ -144,7 +144,7 @@ class _MyPhoneState extends State<MyPhone> {
                         codeAutoRetrievalTimeout: (String verificationId) {},
                       );
                     },
-                    child: const Text("Send the code")),
+                    child: const Text("Send the code",style: TextStyle(color: Colors.white),)),
               ),
             ],
           ),

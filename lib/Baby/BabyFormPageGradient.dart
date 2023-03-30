@@ -210,11 +210,11 @@ class _BabyFormPageState extends State<BabyFormPage> {
                         context: context,
                         //made so that doctor minimum age should be 20
                         initialDate:
-                            DateTime(date.year - 20, date.month, date.day),
+                            DateTime(date.year, date.month, date.day),
                         firstDate:
                             DateTime(date.year - 80, date.month, date.day),
                         lastDate:
-                            DateTime(date.year - 20, date.month, date.day),
+                            DateTime(date.year, date.month, date.day),
                         helpText: 'Select Your Birth Date',
                         builder: (context, child) {
                           return Theme(
@@ -522,15 +522,15 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onPressed: agree
                           ? () {
                               setState(() {
-                                FirebaseAuth.instance.currentUser!
-                                    .updateDisplayName(_name.text.toString());
+
                                 if (formkey.currentState!.validate()) {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => HomePage()));
                                 }
-
+                                FirebaseAuth.instance.currentUser!
+                                    .updateDisplayName(_name.text.toString());
                                 updatebaby(
                                   name: _name.text.toString(),
                                   date: _date.text.toString(),
@@ -655,7 +655,6 @@ class _BabyFormPageState extends State<BabyFormPage> {
     final docUser = FirebaseFirestore.instance
         .collection('usersData')
         .doc(FirebaseAuth.instance.currentUser!.uid.toString());
-
     // If you want, you can put the code inside of doc() in another global string and write the variable name here.
 
     final json = {
