@@ -47,7 +47,7 @@ class _babysittersearchState extends State<babysittersearch> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 20,),
           Expanded(
             flex: 9,
             child: ListView(

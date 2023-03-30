@@ -522,15 +522,15 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onPressed: agree
                           ? () {
                               setState(() {
-
+                                FirebaseAuth.instance.currentUser!
+                                    .updateDisplayName(_name.text.toString());
                                 if (formkey.currentState!.validate()) {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => HomePage()));
                                 }
-                                FirebaseAuth.instance.currentUser!
-                                    .updateDisplayName(_name.text.toString());
+
                                 updatebaby(
                                   name: _name.text.toString(),
                                   date: _date.text.toString(),

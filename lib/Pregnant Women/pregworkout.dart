@@ -25,18 +25,18 @@ class _PregWrokoutState extends State<PregWrokout> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+        backgroundColor: Colors.deepPurpleAccent.shade700,
         appBar: AppBar(
           title: Center(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+              padding: const EdgeInsets.fromLTRB(0, 10, 50, 0),
               child: Text("Workout Videos",style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w500,
-                fontSize: 22,color: Colors.black
+                fontSize: 22,color: Colors.deepPurpleAccent.shade700
               )),
             ),
           ),
-          elevation: 0,
+          elevation: 8,
           backgroundColor: Colors.white,
           leading: Padding(
             padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
@@ -47,7 +47,7 @@ class _PregWrokoutState extends State<PregWrokout> {
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
-                  color: Colors.black,
+                  color: Colors.deepPurpleAccent.shade700,
                 )),
           ),
         ),
@@ -67,10 +67,10 @@ class _PregWrokoutState extends State<PregWrokout> {
                     child: Text('Select Language for Your Workout',
                         style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w500,
-                          fontSize: 20,
+                          fontSize: 20,color: Colors.white
                         )),
                     height: 50,
-                    color: Colors.white,
+                    color: Colors.deepPurpleAccent.shade700,
                   ),
                 ),
                 SizedBox(height: 20,),
@@ -88,7 +88,7 @@ class _PregWrokoutState extends State<PregWrokout> {
                         child: Text(
                           " ENGLISH 'अंग्रेज़ी'",
                           style: GoogleFonts.poppins(
-                              fontSize: 25, fontWeight: FontWeight.w500),
+                              fontSize: 25, fontWeight: FontWeight.w500,color: Colors.white),
                         ),
                       ),
                     ),
@@ -103,7 +103,7 @@ class _PregWrokoutState extends State<PregWrokout> {
                         },
                         icon: Icon(
                           Icons.arrow_forward_ios,
-                          color: Colors.black,
+                          color: Colors.white,
                         )
                     ),
                   ],
@@ -142,9 +142,9 @@ class _PregWrokoutState extends State<PregWrokout> {
                           boxShadow: [
                             BoxShadow(
                                 //color: Color.fromRGBO(193, 188, 188, 1),
-                                // offset: const Offset(0, 12),
-                                // blurRadius: 13,
-                                // spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1,//New
                                 )
                           ],
                         ),
@@ -169,7 +169,7 @@ class _PregWrokoutState extends State<PregWrokout> {
                         child: Text(
                           " HINDI 'हिंदी'",
                           style: GoogleFonts.poppins(
-                              fontSize: 25, fontWeight: FontWeight.w500),
+                              fontSize: 25, fontWeight: FontWeight.w500,color: Colors.white),
                         ),
                       ),
                     ),
@@ -184,7 +184,7 @@ class _PregWrokoutState extends State<PregWrokout> {
                         },
                         icon: Icon(
                           Icons.arrow_forward_ios,
-                          color: Colors.black,
+                          color: Colors.white,
                         )
                     ),
                   ],
@@ -225,9 +225,9 @@ class _PregWrokoutState extends State<PregWrokout> {
                           boxShadow: [
                             BoxShadow(
                               //color: Color.fromRGBO(193, 188, 188, 1),
-                              // offset: const Offset(0, 12),
-                              // blurRadius: 13,
-                              // spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1, //New
                             )
                           ],
                         ),
