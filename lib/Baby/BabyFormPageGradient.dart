@@ -562,17 +562,16 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onPressed: agree
                           ? () {
                               setState(() {
-                                FirebaseAuth.instance.currentUser!
-                                    .updateDisplayName(_name.text.toString());
+
                                 if (formkey.currentState!.validate()) {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => HomePage()));
                                 }
-                              });
-
-                              updatebaby(
+                                FirebaseAuth.instance.currentUser!
+                                    .updateDisplayName(_name.text.toString());
+                                updatebaby(
                                   name: _name.text.toString(),
                                   date: _date.text.toString(),
                                   gender: flag == 0 ? 'male' : 'female',
@@ -582,11 +581,14 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                   allergy: _allergy.text.toString(),
                                   bloodgroup: _bloodgroup.text.toString(),
                                   mothername: _mothername.text.toString(),
-                                fathername: _fathername.text.toString(),
-                                parentnumber: _parentnumber.text.toString(),
-                                resiaddress: _resiaddress.text.toString(),
-                                postalcode: _postalcode.text.toString(),
-                              );
+                                  fathername: _fathername.text.toString(),
+                                  parentnumber: _parentnumber.text.toString(),
+                                  resiaddress: _resiaddress.text.toString(),
+                                  postalcode: _postalcode.text.toString(),
+                                );
+                              });
+
+
 
                             }
                           : null,
