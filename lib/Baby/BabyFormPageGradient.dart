@@ -562,6 +562,8 @@ class _BabyFormPageState extends State<BabyFormPage> {
                       onPressed: agree
                           ? () {
                               setState(() {
+                                FirebaseAuth.instance.currentUser!
+                                    .updateDisplayName(_name.text.toString());
                                 if (formkey.currentState!.validate()) {
                                   Navigator.push(
                                       context,
@@ -569,6 +571,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                           builder: (context) => HomePage()));
                                 }
                               });
+
                               updatebaby(
                                   name: _name.text.toString(),
                                   date: _date.text.toString(),
@@ -584,8 +587,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                 resiaddress: _resiaddress.text.toString(),
                                 postalcode: _postalcode.text.toString(),
                               );
-                              FirebaseAuth.instance.currentUser!
-                                  .updateDisplayName(_name.text.toString());
+
                             }
                           : null,
                       style: ElevatedButton.styleFrom(

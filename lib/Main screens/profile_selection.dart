@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:maternio_1/Babysitter/babysitter_profile.dart';
@@ -45,7 +46,7 @@ class _ProfileSelectionState extends State<ProfileSelection> {
                   style: GoogleFonts.poppins(fontSize: 17),
                 ),
                 Text(
-                  "@aaryjadhav",
+                  FirebaseAuth.instance.currentUser!.phoneNumber.toString(),
                   style: GoogleFonts.akshar(
                       fontWeight: FontWeight.w500, fontSize: 17),
                 )
