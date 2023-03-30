@@ -1,5 +1,7 @@
 //--------------------------------baby_screens--------------------------
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -18,7 +20,22 @@ class baby_profile extends StatefulWidget {
 }
 
 class _baby_profileState extends State<baby_profile> {
-  // This widget is the root of your application.
+  String name = '';
+  void initState() {
+    super.initState();
+    getData();
+  }
+  Future getData() async{
+    await FirebaseFirestore.instance.collection("usersData").doc(FirebaseAuth.instance.currentUser!.uid.toString()).get().then((value) async{
+      setState(() {
+        name=value['Pregnant Women Name'];
+
+
+      });
+    });
+    // int currentValue=consumed;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -117,7 +134,7 @@ class _baby_profileState extends State<baby_profile> {
                               ),
                               SizedBox(height: 20),
                               Text(
-                                  "Baby",
+                                  name,
                                   style: GoogleFonts.poppins(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500)
