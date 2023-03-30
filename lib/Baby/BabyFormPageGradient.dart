@@ -659,7 +659,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
     // If you want, you can put the code inside of doc() in another global string and write the variable name here.
 
     final json = {
-      'Type of Customer': 'Baby Info',
+      'Type of Customer': 'Baby',
       'Baby Name': name,
       'Baby Age': babyage,
       'Baby Height': height,

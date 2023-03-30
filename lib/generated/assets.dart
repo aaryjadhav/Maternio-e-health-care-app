@@ -31,7 +31,7 @@ class Assets {
   static const String assetsBabyex = 'assets/babyex.png';
   static const String assetsBabypp = 'assets/babypp.png';
   static const String assetsBabysitter = 'assets/babysitter.png';
-  static const String assetsBabysitterhome = 'assets/babysitterhome.jpg';
+  static const String assetsBabysitterhome = 'assets/babysitterhome.png';
   static const String assetsBabysittericon = 'assets/babysittericon.png';
   static const String assetsCustomerSupport = 'assets/customer-support.png';
   static const String assetsDevangpp = 'assets/devangpp.jpg';
@@ -57,6 +57,7 @@ class Assets {
   static const String assetsMother = 'assets/mother.png';
   static const String assetsMycare = 'assets/mycare.png';
   static const String assetsNutrition = 'assets/nutrition.png';
+  static const String assetsPregnantpp = 'assets/pregnantpp.png';
   static const String assetsPregnantw = 'assets/pregnantw.png';
   static const String assetsPregwork = 'assets/pregwork.png';
   static const String assetsQuestion = 'assets/question.png';
@@ -75,7 +76,6 @@ class Assets {
   static const String maternio1AssetsAarypp = 'assets/aarypp.png';
   static const String maternio1AssetsAbstract = 'assets/abstract.png';
   static const String maternio1AssetsAshalpp = 'assets/ashalpp.png';
-  static const String maternio1AssetsBabysitterhome = 'assets/babysitterhome.png';
   static const String maternio1AssetsDevangpp = 'assets/devangpp.png';
   static const String maternio1AssetsDoctorhome = 'assets/doctorhome.png';
   static const String maternio1AssetsHindi = 'assets/hindi.png';

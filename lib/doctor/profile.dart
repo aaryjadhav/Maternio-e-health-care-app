@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,6 +29,35 @@ class Profile extends StatefulWidget {
 }
 
 class _HomePageState extends State<Profile> {
+  String name ='';
+  String phonenumber='';
+  String imgsrc='';
+  void initState() {
+    super.initState();
+    getData();
+  }
+  Future getData() async{
+    await FirebaseFirestore.instance.collection("usersData").doc(FirebaseAuth.instance.currentUser!.uid.toString()).get().then((value) async{
+      setState((
+
+          ) {
+        if(value["Type of Customer"]=="Baby"){
+          name=value['Baby Name'];
+          imgsrc="assets/babypp.png";
+          phonenumber=value['Parent Contact Number'];
+        }
+        else{
+          name=value['Pregnant Women Name'];
+          imgsrc="assets/pregnantpp.png";
+          phonenumber=value['Contact Number'];
+        }
+
+
+
+      });
+    });
+    // int currentValue=consumed;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,8 +119,8 @@ class _HomePageState extends State<Profile> {
                         height: 55,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef"),
+                                image: AssetImage(
+                                   imgsrc),
                                 fit: BoxFit.cover),
                             shape: BoxShape.circle,
                             border: Border.all(
@@ -105,7 +135,7 @@ class _HomePageState extends State<Profile> {
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
                           Text(
-                            'Aary Jadhav',
+                            name,
                             style: TextStyle(
                                 fontSize: 16,
                                 color: Colors.white,
@@ -113,7 +143,7 @@ class _HomePageState extends State<Profile> {
                           ),
                           SizedBox(height: 5),
                           Text(
-                            '@gorggaming',
+                            phonenumber,
                             style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.white,

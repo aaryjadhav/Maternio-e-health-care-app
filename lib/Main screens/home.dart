@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/doctorhome.jpg"),
+                              image: AssetImage("assets/doctorhome.png"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),

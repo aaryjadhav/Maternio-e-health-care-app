@@ -22,9 +22,6 @@ class _PregFormPageState extends State<PregnantFormPage> {
   TextEditingController _pregbloodgroup = TextEditingController();
   TextEditingController _pregheight = TextEditingController();
   TextEditingController _pregweight = TextEditingController();
-  TextEditingController _pregallergy = TextEditingController();
-  TextEditingController _spousename = TextEditingController();
-  TextEditingController _spousebloodgroup = TextEditingController();
   TextEditingController _phonenumber = TextEditingController();
   TextEditingController _resiaddress = TextEditingController();
   TextEditingController _postalcode = TextEditingController();
@@ -450,7 +447,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
               ),
 
               //Mobile Number TextField ----------------------------------------
-              labelText('Mobile Number'),
+              labelText('Contact Number'),
               Padding(
                 padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
                 child: TextFormField(
@@ -657,7 +654,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
     // If you want, you can put the code inside of doc() in another global string and write the variable name here.
 
     final json = {
-      'Type of Customer': 'Pregnant Women Info',
+      'Type of Customer': 'Pregnant Women',
       'Pregnant Women Name': name,
       'D-O-B': date,
       'Gender': gender,

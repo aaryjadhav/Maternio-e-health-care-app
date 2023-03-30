@@ -504,9 +504,17 @@ class _AboutUsState extends State<AboutUs> {
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(35, 10, 35, 0),
                               child: Container(
-                                child: Text("Vidyavardhin's Bhausaheb Vartak Polytechnic, Diploma\n   Capstone Project CO6I CPP Group-3 :- Aary Jadhav,\n    Devang Dhadaniya, Snowy Fernandes, Ashal Dabre. \n\n     'MATERNIO' A Health & Care App Made in Flutter",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12),),
+                                child: Text("Vidyavardhin's Bhausaheb Vartak Polytechnic, Diploma\n   Capstone Project CO6I CPP Group-3 :- Aary Jadhav,\n    Devang Dhadaniya, Snowy Fernandes, Ashal Dabre.",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12),),
                               ),
                             ),
+                          ),
+                          SizedBox(height: 15,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("'MATERNIO' A Health & Care App Made in Flutter ",style: GoogleFonts.poppins(fontWeight: FontWeight.w400,fontSize: 12),),
+                              Image.asset("assets/android.png",width: 18,height: 18,)
+                            ],
                           )
                         ],
 

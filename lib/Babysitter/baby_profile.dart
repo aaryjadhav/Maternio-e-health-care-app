@@ -42,7 +42,7 @@ class _baby_profileState extends State<baby_profile> {
       setState((
 
           ) {
-        if(value["Type of Customer"]=="Baby Info"){
+        if(value["Type of Customer"]=="Baby"){
           name=value['Baby Name'];
           dob=value['D-O-B'];
           imgsrc="assets/babypp.png";
@@ -55,11 +55,12 @@ class _baby_profileState extends State<baby_profile> {
           phonenumber=value['Parent Contact Number'];
           address=value['Residential Address'];
           postalcode=value['Postal Code'];
+          type=value['Type of Customer'];
         }
         else{
           name=value['Pregnant Women Name'];
           dob=value['D-O-B'];
-          imgsrc="assets/Baby1.png";
+          imgsrc="assets/pregnantpp.png";
           gender=value['Gender'];
           age=value['Pregnant Women Age'];
           height=value['Pregnant Women Height'];
@@ -69,6 +70,7 @@ class _baby_profileState extends State<baby_profile> {
           phonenumber=value['Contact Number'];
           address=value['Residential Address'];
           postalcode=value['Postal Code'];
+          type=value['Type of Customer'];
         }
 
 
@@ -251,7 +253,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "Baby",
+                                                type,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
