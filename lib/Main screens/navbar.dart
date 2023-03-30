@@ -24,9 +24,9 @@ class BottomNavBar extends StatelessWidget {
           textTheme: Theme
               .of(context)
               .textTheme
-              .copyWith(caption: new TextStyle(color: Colors.deepPurpleAccent))),
+              .copyWith(caption: new TextStyle(color: Colors.deepPurpleAccent.shade700))),
       child: BottomNavigationBar(
-        backgroundColor: Colors.black87,
+        //backgroundColor: Colors.deepPurpleAccent,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
@@ -50,7 +50,7 @@ class BottomNavBar extends StatelessWidget {
         showUnselectedLabels: false,
         type: BottomNavigationBarType.shifting,
         currentIndex: currentindexvalue,
-        selectedItemColor: Colors.deepPurpleAccent,
+        selectedItemColor: Colors.deepPurpleAccent.shade700,
         unselectedItemColor: Colors.white,
         onTap: (int index) {
           currentindexvalue = index;

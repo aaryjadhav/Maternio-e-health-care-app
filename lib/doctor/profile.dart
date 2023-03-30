@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -11,6 +12,7 @@ import 'package:maternio_1/Pregnant%20Women/PregnantFormPageGradient.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 
+import '../Main screens/login/phone.dart';
 import '../Main screens/navbar.dart';
 
 
@@ -151,44 +153,50 @@ class _HomePageState extends State<Profile> {
                         blurRadius: 44,
                         offset: Offset(0, 4))
                   ]),
-              child: Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  SizedBox(width: 16),
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Color(0xffF6F6F6),
-                    child: Image.asset("assets/exit.png",color: Colors.deepPurpleAccent,
-                      width: 22,
-                      height: 22,
-                    ),
-                  ),
-                  SizedBox(width: 13),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [
-                      Text(
-                        'Log out',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xff555555)),
+              child: InkWell(onTap: (){
+                FirebaseAuth.instance.signOut();
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MyPhone()));
+              },
+                child: Row(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    SizedBox(width: 16),
+                    CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Color(0xffF6F6F6),
+                      child: Image.asset("assets/exit.png",color: Colors.deepPurpleAccent,
+                        width: 22,
+                        height: 22,
                       ),
-                      SizedBox(height: 2),
-                      Text(
-                        'Further secure your account for safety',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xffABABAB)),
-                      )
-                    ],
-                  ),
-                  //---------
-                  SizedBox(width: 16)
-                ],
+                    ),
+                    SizedBox(width: 13),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        Text(
+                          'Log out',
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xff555555)),
+                        ),
+                        SizedBox(height: 2),
+                        Text(
+                          'Further secure your account for safety',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xffABABAB)),
+                        )
+                      ],
+                    ),
+                    //---------
+                    SizedBox(width: 16)
+                  ],
+                ),
               ),
             ),
           ),

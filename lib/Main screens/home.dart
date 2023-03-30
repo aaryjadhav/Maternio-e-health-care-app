@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.deepPurpleAccent.shade700 ,
         drawer: Drawer_screen(),
         appBar: AppBar(
           title: Center(
@@ -41,21 +41,22 @@ class _HomePageState extends State<HomePage> {
                       builder: (context) => HomePage()));},
                 child: Text("MATERNIO",style: GoogleFonts.akshar(
                     fontWeight: FontWeight.w500,
-                    fontSize: 23,color: Colors.white,
+                    fontSize: 23,color: Colors.deepPurpleAccent.shade700,
                 )),
               ),
             ),
           ),
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: Colors.deepPurpleAccent.shade700,
-          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.deepPurpleAccent.shade700),
+          backgroundColor: Colors.white,
+          elevation: 8,
+
           actions: [
             IconButton(
               icon: Icon(
                 Icons.person,
                 size: 30,
               ),
-              color: Colors.white,
+              color: Colors.deepPurpleAccent.shade700,
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Profile()));
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           " Doctors ",
                           style: GoogleFonts.poppins(
-                              fontSize: 25, fontWeight: FontWeight.w500),
+                              fontSize: 25, fontWeight: FontWeight.w500,color: Colors.white),
                         ),
                       ),
                     ),
@@ -131,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.poppins(
                                             fontSize: 30,
                                             fontWeight: FontWeight.w500,
-                                            color: Colors.black),
+                                            color: Colors.deepPurpleAccent.shade700),
                                         //  maxLines: null,
                                         textAlign: TextAlign.justify,
                                       ),
@@ -145,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                                         icon: Icon(
                                           Icons.arrow_forward_ios_sharp,
                                           size: 30,
-                                          color: Colors.black,
+                                          color: Colors.deepPurpleAccent.shade700,
                                         ),
                                         color: Colors.black,
                                         onPressed: () {
@@ -174,9 +175,9 @@ class _HomePageState extends State<HomePage> {
                           boxShadow: [
                             BoxShadow(
                                 //color: Color.fromRGBO(193, 188, 188, 1),
-                                // offset: const Offset(0, 12),
-                                // blurRadius: 13,
-                                // spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1,//New
                                 )
                           ],
                         ),
@@ -195,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           " Babysitters ",
                           style: GoogleFonts.poppins(
-                              fontSize: 25, fontWeight: FontWeight.w500),
+                              fontSize: 25, fontWeight: FontWeight.w500,color: Colors.white),
                         ),
                       ),
                     ),
@@ -227,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                                   Container(
                                     margin: EdgeInsets.only(left: 12, top: 30),
                                     child: CircleAvatar(
-                                      backgroundColor: Colors.deepPurpleAccent,
+                                      backgroundColor: Colors.redAccent,
                                       backgroundImage:
                                       AssetImage('assets/babysitter.png',),
                                       radius: 50,
@@ -244,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.poppins(
                                             fontSize: 30,
                                             fontWeight: FontWeight.w500,
-                                            color: Colors.black),
+                                            color: Colors.deepPurpleAccent.shade700),
                                         //  maxLines: null,
                                         textAlign: TextAlign.justify,
                                       ),
@@ -258,7 +259,7 @@ class _HomePageState extends State<HomePage> {
                                         icon: Icon(
                                           Icons.arrow_forward_ios_sharp,
                                           size: 30,
-                                          color: Colors.black,
+                                          color: Colors.deepPurpleAccent.shade700,
                                         ),
                                         color: Colors.black,
                                         onPressed: () {
@@ -287,9 +288,9 @@ class _HomePageState extends State<HomePage> {
                           boxShadow: [
                             BoxShadow(
                               //color: Color.fromRGBO(193, 188, 188, 1),
-                              // offset: const Offset(0, 12),
-                              // blurRadius: 13,
-                              // spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1, //New
                             )
                           ],
                         ),
@@ -315,7 +316,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           " My Care ",
                           style: GoogleFonts.poppins(
-                              fontSize: 25, fontWeight: FontWeight.w500),
+                              fontSize: 25, fontWeight: FontWeight.w500,color: Colors.white),
                         ),
                       ),
                     ),
@@ -323,7 +324,7 @@ class _HomePageState extends State<HomePage> {
                       icon: Icon(
                         Icons.arrow_forward_ios_sharp,
                         size: 25,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                       color: Colors.black,
                       onPressed: () {
@@ -388,7 +389,7 @@ class _HomePageState extends State<HomePage> {
                                             style: GoogleFonts.poppins(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500,
-                                                color: Colors.white),
+                                                color: Colors.deepPurpleAccent),
                                             //  maxLines: null,
                                             textAlign: TextAlign.justify,
                                           ),
@@ -403,14 +404,14 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         decoration: BoxDecoration(
-                          color: Colors.deepPurpleAccent.shade700,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
-                                //  color: Color.fromRGBO(193, 188, 188, 1),
-                                //  offset: const Offset(0, 12),
-                                //  blurRadius: 13,
-                                // spreadRadius: 3, //New
+                                  //color: Color.fromRGBO(193, 188, 188, 1),
+                                  offset: const Offset(1, 1),
+                                  blurRadius: 3,
+                                 spreadRadius: 1, //New
                                 )
                           ],
                         ),
@@ -462,7 +463,7 @@ class _HomePageState extends State<HomePage> {
                                           style: GoogleFonts.poppins(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                              color: Colors.deepPurpleAccent),
                                           //  maxLines: null,
                                           textAlign: TextAlign.justify,
                                         ),
@@ -476,14 +477,14 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         decoration: BoxDecoration(
-                          color: Colors.deepPurpleAccent.shade700,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
                                 //  color: Color.fromRGBO(193, 188, 188, 1),
-                                //  offset: const Offset(0, 12),
-                                //  blurRadius: 13,
-                                // spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1, //New
                                 )
                           ],
                         ),
@@ -527,7 +528,7 @@ class _HomePageState extends State<HomePage> {
                                           style: GoogleFonts.poppins(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                              color: Colors.deepPurpleAccent),
                                           //  maxLines: null,
                                           textAlign: TextAlign.justify,
                                         ),
@@ -541,14 +542,14 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         decoration: BoxDecoration(
-                          color: Colors.deepPurpleAccent.shade700,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
                                 // color: Color.fromRGBO(193, 188, 188, 1),
-                                // offset: const Offset(0, 12),
-                                // blurRadius: 13,
-                                //spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1, //New
                                 )
                           ],
                         ),
@@ -592,7 +593,7 @@ class _HomePageState extends State<HomePage> {
                                           style: GoogleFonts.poppins(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                              color: Colors.deepPurpleAccent),
                                           //  maxLines: null,
                                           textAlign: TextAlign.justify,
                                         ),
@@ -606,14 +607,14 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         decoration: BoxDecoration(
-                          color: Colors.deepPurpleAccent.shade700,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                           boxShadow: [
                             BoxShadow(
                                 //color: Color.fromRGBO(193, 188, 188, 1),
-                                //offset: const Offset(0, 12),
-                                //blurRadius: 13,
-                                //spreadRadius: 3, //New
+                              offset: const Offset(1, 1),
+                              blurRadius: 3,
+                              spreadRadius: 1,//New
                                 )
                           ],
                         ),
@@ -624,7 +625,7 @@ class _HomePageState extends State<HomePage> {
                   // listview.builder(horizontal end)
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 50,
                 )
               ],
             ), // column

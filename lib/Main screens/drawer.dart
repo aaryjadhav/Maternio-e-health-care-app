@@ -34,13 +34,13 @@ class _Drawer_screenState extends State<Drawer_screen> {
               child: ClipOval(
                 child: Image.asset(
                   "assets/doctorpp.png",
-                  width: 90,
-                  height: 90,
+                  width: 100,
+                  height: 100,
                 ),
               ),
             ),
             decoration: BoxDecoration(
-                color: Colors.deepPurpleAccent,
+                color: Colors.deepPurpleAccent.shade700,
                 image: DecorationImage(
                   image: NetworkImage(
                       'https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-preview.jpg'),
@@ -52,7 +52,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                 height: 25,
                 child: Image.asset(
                   'assets/doctoricon.png',
-                  color: Colors.deepPurpleAccent,
+                  color: Colors.deepPurpleAccent.shade700,
                 )),
             title: Text(
               'Doctors',
@@ -68,7 +68,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                 height: 25,
                 child: Image.asset(
                   'assets/babysittericon.png',
-                  color: Colors.deepPurpleAccent,
+                  color: Colors.deepPurpleAccent.shade700,
                 )),
             title: Text(
               'Babysiter',
@@ -84,7 +84,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                 height: 25,
                 child: Image.asset(
                   'assets/mycare.png',
-                  color: Colors.deepPurpleAccent,
+                  color: Colors.deepPurpleAccent.shade700,
                 )),
             title: Text(
               'My Care',
@@ -95,13 +95,14 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   MaterialPageRoute(builder: (context) => pregnantmycare()));
             },
           ),
+         // Divider(thickness: 1,height: 5,color: Colors.black,),
           SizedBox(
             height: 430,
           ),
           ListTile(
             leading: Icon(
               Icons.logout_outlined,
-              color: Colors.deepPurpleAccent,
+              color: Colors.deepPurpleAccent.shade700,
             ),
             title: Text(
               'Logout',
