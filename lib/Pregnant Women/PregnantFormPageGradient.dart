@@ -448,50 +448,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
                   decoration: getDecoration("Allergy(If Any/None)", false),
                 ),
               ),
-              //Spouse name--------------------------------
-              labelText('Spouse Name'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  controller: _spousename,
-                  maxLines: 1,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please Enter Spouse Name';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration:
-                  getDecoration("Enter Your Spouse Name", false),
-                ),
-              ),
-              //Spouse Blood Group--------------------------------
-              labelText('Spouse Blood Group'),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  controller: _spousebloodgroup,
-                  maxLines: 1,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please Enter Spouse Blood Group';
-                    } else {
-                      return null;
-                    }
-                  },
-                  // maxLines: lines,
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration:
-                  getDecoration("Enter Spouse Blood Group(B+ve)", false),
-                ),
-              ),
+
               //Mobile Number TextField ----------------------------------------
               labelText('Mobile Number'),
               Padding(
@@ -581,13 +538,11 @@ class _PregFormPageState extends State<PregnantFormPage> {
                             name: _name.text.toString(),
                             date: _date.text.toString(),
                             gender:flag == 0 ? 'female' : 'other',
-                            pregnantwomenage: _age.text.toString(),
-                            pregnantwomenheight: _pregheight.text.toString(),
-                            pregnantwomenweight: _pregweight.text.toString(),
+                            age: _age.text.toString(),
+                            height: _pregheight.text.toString(),
+                           weight: _pregweight.text.toString(),
                             allergy: _allergy.text.toString(),
-                            spousename: _spousename.text.toString(),
-                            pregnantbloodgroup: _pregbloodgroup.text.toString(),
-                            spousebloodgroup: _spousebloodgroup.text.toString(),
+                            bloodgroup: _pregbloodgroup.text.toString(),
                             phonenumber: _phonenumber.text.toString(),
                             resiaddress: _resiaddress.text.toString(),
                         );
@@ -688,13 +643,11 @@ class _PregFormPageState extends State<PregnantFormPage> {
     required String name,
     required String date,
     required String gender,
-    required String pregnantwomenage,
-    required String pregnantwomenheight,
-    required String pregnantwomenweight,
+    required String age,
+    required String height,
+    required String weight,
     required String allergy,
-    required String spousename,
-    required String pregnantbloodgroup,
-    required String spousebloodgroup,
+    required String bloodgroup,
     required String phonenumber,
     required String resiaddress}) async {
     final docUser = FirebaseFirestore.instance
@@ -708,13 +661,11 @@ class _PregFormPageState extends State<PregnantFormPage> {
       'Pregnant Women Name': name,
       'D-O-B': date,
       'Gender': gender,
-      'Pregnant Women Age': pregnantwomenage,
-      'Pregnant Women Blood Group': pregnantbloodgroup,
-      'Pregnant Women Height': pregnantwomenheight,
-      'Pregnant Women Weight': pregnantwomenweight,
+      'Pregnant Women Age': age,
+      'Pregnant Women Blood Group':bloodgroup,
+      'Pregnant Women Height': height,
+      'Pregnant Women Weight': weight,
       'Allergy': allergy,
-      'Spouse Name': spousename,
-      'Spouse Blood Group': spousebloodgroup,
       'Contact Number': phonenumber,
       'Residential Address': resiaddress,
       'Postal Code': postalcode,

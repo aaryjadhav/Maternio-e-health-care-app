@@ -29,6 +29,7 @@ class Assets {
   static const String assetsBabyUpper2 = 'assets/baby_upper_2.gif';
   static const String assetsBabyUpper3 = 'assets/baby_upper_3.gif';
   static const String assetsBabyex = 'assets/babyex.png';
+  static const String assetsBabypp = 'assets/babypp.png';
   static const String assetsBabysitter = 'assets/babysitter.png';
   static const String assetsBabysitterhome = 'assets/babysitterhome.jpg';
   static const String assetsBabysittericon = 'assets/babysittericon.png';

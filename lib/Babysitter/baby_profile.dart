@@ -21,14 +21,56 @@ class baby_profile extends StatefulWidget {
 
 class _baby_profileState extends State<baby_profile> {
   String name = '';
+  String dob='';
+  String type='';
+  String imgsrc='';
+  String gender='';
+  String age='';
+  String height='';
+  String weight='';
+  String allergy='';
+  String bloodgroup='';
+  String phonenumber='';
+  String address='';
+  String postalcode='';
   void initState() {
     super.initState();
     getData();
   }
   Future getData() async{
     await FirebaseFirestore.instance.collection("usersData").doc(FirebaseAuth.instance.currentUser!.uid.toString()).get().then((value) async{
-      setState(() {
-        name=value['Pregnant Women Name'];
+      setState((
+
+          ) {
+        if(value["Type of Customer"]=="Baby Info"){
+          name=value['Baby Name'];
+          dob=value['D-O-B'];
+          imgsrc="assets/babypp.png";
+          gender=value['Gender'];
+          age=value['Baby Age'];
+          height=value['Baby Height'];
+          weight=value['Baby Weight'];
+          allergy=value['Allergy'];
+          bloodgroup=value['Baby Blood Group'];
+          phonenumber=value['Parent Contact Number'];
+          address=value['Residential Address'];
+          postalcode=value['Postal Code'];
+        }
+        else{
+          name=value['Pregnant Women Name'];
+          dob=value['D-O-B'];
+          imgsrc="assets/Baby1.png";
+          gender=value['Gender'];
+          age=value['Pregnant Women Age'];
+          height=value['Pregnant Women Height'];
+          weight=value['Pregnant Women Weight'];
+          allergy=value['Allergy'];
+          bloodgroup=value['Pregnant Women Blood Group'];
+          phonenumber=value['Contact Number'];
+          address=value['Residential Address'];
+          postalcode=value['Postal Code'];
+        }
+
 
 
       });
@@ -109,35 +151,22 @@ class _baby_profileState extends State<baby_profile> {
                                       radius: 60,
                                       child: CircleAvatar(
                                           backgroundImage:
-                                              AssetImage('assets/baby.png'),
+                                              AssetImage(imgsrc),
                                           radius: 55),
                                     ),
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(85, 40, 0, 0),
-                                    child: CircleAvatar(
-                                      backgroundColor: Color(0xff6DAC67),
-                                      radius: 14,
-                                      child: IconButton(
-                                        icon: Icon(Icons.edit),
-                                        onPressed: () { Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => BabyFormPage()));},
-                                        color: Colors.white,
-                                        iconSize: 15,
-                                      ),
-                                    ),
-                                  )
                                 ],
                               ),
                               SizedBox(height: 20),
-                              Text(
+                              Flexible(
+                                child: Text(
                                   name,
                                   style: GoogleFonts.poppins(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w500)
+                                      color: Colors.black,
+                                      //fontWeight: FontWeight.w500,
+                                      fontSize: 20,),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             ],
                           ),
@@ -232,13 +261,13 @@ class _baby_profileState extends State<baby_profile> {
                                               ),
 
                                               Text(
-                                                "Birth Date",
+                                                "Date of Birth",
                                                 style: GoogleFonts.poppins(
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "24-02-2024",
+                                                dob,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -253,7 +282,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "Female",
+                                                gender,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -268,7 +297,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "1 Month",
+                                                age,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -338,7 +367,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontSize: 17),
                                               ),
                                               Text(
-                                                "52cm/1.7 feet",
+                                               height,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -351,7 +380,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),),
                                               Text(
-                                                "3.2 kg",
+                                                weight,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -364,7 +393,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),),
                                               Text(
-                                                "No allergy",
+                                                allergy,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -377,7 +406,7 @@ class _baby_profileState extends State<baby_profile> {
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 17),),
                                               Text(
-                                                "B +ve",
+                                                bloodgroup,
                                                 style: GoogleFonts.poppins(
                                                     color: Colors
                                                         .deepPurpleAccent
@@ -435,13 +464,13 @@ class _baby_profileState extends State<baby_profile> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          "Parents Contact No.",
+                                          "Contact No.",
                                           style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 17),
                                         ),
                                         Text(
-                                          "+91 1234567890",
+                                          phonenumber,
                                           style: GoogleFonts.poppins(
                                               color: Colors
                                                   .deepPurpleAccent
@@ -449,39 +478,14 @@ class _baby_profileState extends State<baby_profile> {
                                               //fontWeight: FontWeight.w500,
                                               fontSize: 12),
                                         ),
-                                        Text("Mother's Name",
-                                          style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 17),),
-                                        Text(
-                                          "Mrs.Sofia Angad",
-                                          style: GoogleFonts.poppins(
-                                              color: Colors
-                                                  .deepPurpleAccent
-                                                  .shade700,
-                                              //fontWeight: FontWeight.w500,
-                                              fontSize: 12),
-                                        ),
-                                         Text("Father's Name",
-                                           style: GoogleFonts.poppins(
-                                               fontWeight: FontWeight.w500,
-                                               fontSize: 17),),
-                                        Text(
-                                          "Mr. Raj Angad",
-                                          style: GoogleFonts.poppins(
-                                              color: Colors
-                                                  .deepPurpleAccent
-                                                  .shade700,
-                                              //fontWeight: FontWeight.w500,
-                                              fontSize: 12),
-                                        ),
+                                        SizedBox(height: 5,),
                                         Text("Address",
                                           style: GoogleFonts.poppins(
                                               fontWeight: FontWeight.w500,
                                               fontSize: 17),),
                                         Flexible(
                                           child: Text(
-                                            "B/109, Bhanuhans C.H.S,Navghar Road, Bhayandar(east), Thane-401105",
+                                            address,
                                             style: GoogleFonts.poppins(
                                                 color: Colors
                                                     .deepPurpleAccent
@@ -490,19 +494,20 @@ class _baby_profileState extends State<baby_profile> {
                                                 fontSize: 12),
                                           ),
                                         ),
-
-
-                                        // Text("Age",
-                                        //     style: TextStyle(
-                                        //         fontWeight:
-                                        //             FontWeight.bold)),
-                                        // Text(
-                                        //   "21",
-                                        //   style: TextStyle(
-                                        //       color: Colors
-                                        //           .deepPurpleAccent
-                                        //           .shade200),
-                                        //),
+                                        SizedBox(height: 5,),
+                                        Text("Zip/Postal Code",
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 17),),
+                                        Text(
+                                          postalcode,
+                                          style: GoogleFonts.poppins(
+                                              color: Colors
+                                                  .deepPurpleAccent
+                                                  .shade700,
+                                              //fontWeight: FontWeight.w500,
+                                              fontSize: 12),
+                                        ),
                                       ],
                                     ),
                                   ),

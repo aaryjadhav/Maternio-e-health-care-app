@@ -446,46 +446,6 @@ class _BabyFormPageState extends State<BabyFormPage> {
                   decoration: getDecoration("Enter Baby's Blood Group", false),
                 ),
               ),
-              //Mother Name------------------------
-              labelText("Mother's Name"),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  controller: _mothername,
-                  validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Name';
-                    } else {
-                      return null;
-                    }
-                  },
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Mother's Name", false),
-                ),
-              ),
-              //Father Name
-              labelText("Father's Name"),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 12),
-                child: TextFormField(
-                  controller: _fathername,
-                  validator: (value) {
-                    if (value!.isEmpty ||
-                        !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                      return 'Enter Correct Name';
-                    } else {
-                      return null;
-                    }
-                  },
-                  enableSuggestions: true,
-                  cursorColor: Colors.black,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
-                  decoration: getDecoration("Father's Name", false),
-                ),
-              ),
               //Mobile Number TextField ----------------------------------------
               labelText("Parent's Contact Number"),
               Padding(
@@ -576,12 +536,10 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                   date: _date.text.toString(),
                                   gender: flag == 0 ? 'male' : 'female',
                                   babyage: _babyage.text.toString(),
-                                  babyheight: _babyheight.text.toString(),
-                                  babyweight: _babyweight.text.toString(),
+                                  height: _babyheight.text.toString(),
+                                  weight: _babyweight.text.toString(),
                                   allergy: _allergy.text.toString(),
                                   bloodgroup: _bloodgroup.text.toString(),
-                                  mothername: _mothername.text.toString(),
-                                  fathername: _fathername.text.toString(),
                                   parentnumber: _parentnumber.text.toString(),
                                   resiaddress: _resiaddress.text.toString(),
                                   postalcode: _postalcode.text.toString(),
@@ -688,12 +646,10 @@ class _BabyFormPageState extends State<BabyFormPage> {
       required String date,
       required String gender,
       required String babyage,
-      required String babyheight,
-      required String babyweight,
+      required String height,
+      required String weight,
       required String allergy,
       required String bloodgroup,
-      required String mothername,
-      required String fathername,
       required String parentnumber,
       required String resiaddress}) async {
     final docUser = FirebaseFirestore.instance
@@ -706,12 +662,10 @@ class _BabyFormPageState extends State<BabyFormPage> {
       'Type of Customer': 'Baby Info',
       'Baby Name': name,
       'Baby Age': babyage,
-      'Baby Height': babyheight,
-      'Baby Weight': babyweight,
+      'Baby Height': height,
+      'Baby Weight': weight,
       'Allergy': allergy,
       'Baby Blood Group': bloodgroup,
-      'Mother Name': mothername,
-      'Father Name': fathername,
       'Parent Contact Number': parentnumber,
       'Residential Address': resiaddress,
       'Postal Code': postalcode,
