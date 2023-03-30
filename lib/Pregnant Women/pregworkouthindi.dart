@@ -84,10 +84,10 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.deepPurpleAccent.shade700,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
+        backgroundColor: Colors.deepPurpleAccent.shade700,
+        elevation: 8,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
           child: IconButton(
@@ -97,7 +97,7 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
               },
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.black,
+                color: Colors.white,
               )),
         ),
       ),
@@ -108,8 +108,12 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
               //Title Text -----------------------------------------------------
               //SizedBox(height: 0),
               Text(
-                'Pre-Pregnancy Workout',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                'Pre-Pregnancy Workout(हिंदी)',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      color: Colors.white
+                  )
               ),
               SizedBox(height: 35),
 
@@ -120,11 +124,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       "गर्भावस्था के दौरान किन्हे व्यायाम नहीं करना चाहिए ? | Exercising When Pregnant",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               //Video Container ------------------------------------------------
@@ -136,10 +140,10 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                       "गर्भावस्था के दौरान व्यायाम का महत्व | Benefits of Exercise During Pregnancy",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video2),
@@ -149,11 +153,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       "गर्भावस्था में व्यायाम करते समय ये बाते ध्यान में रखे ! | Pregnancy Exercises Tips",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video3),
@@ -164,10 +168,10 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                       "गर्भावस्था में सरल योग व्यायाम | 1st month pregnancy exercise ",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video4),
@@ -177,11 +181,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                      "गर्भावस्था के लिए श्वास व्यायाम | 2nd month pregnancy exercise",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video5),
@@ -191,11 +195,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       "तीसरे महीने के लिए गर्भावस्था व्यायाम | Exercises for constipation & saggy breasts",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video6),
@@ -206,10 +210,10 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                       "चौथे महीने की गर्भावस्था व्यायाम | Workout During Pregnancy Second Trimester",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video7),
@@ -219,11 +223,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       "5वें महीने की गर्भावस्था व्यायाम | गर्भावस्था दूसरी तिमाही के दौरान कसरत",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video8),
@@ -233,11 +237,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       " 6 महीने की गर्भावस्था व्यायाम| Workout During Pregnancy Second Trimester",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video9),
@@ -247,11 +251,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       "7वें महीने की गर्भावस्था व्यायाम | Pregnancy Exercise for Normal Delivery ",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video10),
@@ -261,11 +265,11 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                   child: Text(
                       "8वें महीने की गर्भावस्था व्यायाम | Pregnancy Exercise for Normal Delivery ",
                       style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w500,color: Colors.white,
                         fontSize: 15,
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video11),
@@ -277,9 +281,10 @@ class _PregExcercisePageHindiState extends State<PregExcercisePageHindi> {
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         fontSize: 15,
+                        color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video12),

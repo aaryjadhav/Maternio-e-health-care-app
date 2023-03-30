@@ -135,7 +135,7 @@ class _PregWrokoutState extends State<PregWrokout> {
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/english.jpg"),
+                              image: NetworkImage("https://i.postimg.cc/m2Gxxm6h/english.jpg"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),
@@ -218,7 +218,7 @@ class _PregWrokoutState extends State<PregWrokout> {
 
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("assets/hindi.png"),
+                              image:NetworkImage("https://i.postimg.cc/Bb9z0vpR/hindi.png"),
                               fit: BoxFit.cover),
                           // color: Colors.deepPurpleAccent.shade700,
                           borderRadius: BorderRadius.circular(10),

@@ -101,10 +101,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.deepPurpleAccent.shade700,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
+        backgroundColor: Colors.deepPurpleAccent.shade700,
+        elevation: 8,
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
           child: IconButton(
@@ -114,7 +114,7 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
               },
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.black,
+                color: Colors.white,
               )),
         ),
       ),
@@ -128,8 +128,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
+                    color: Colors.white
                   )),
               SizedBox(height: 35),
+
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
                 child: Container(
@@ -137,10 +139,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Full Body Pregnancy Workout | Walking HIIT Workout | NOT EASY | 1st, 2nd, 3rd Trimester Safe',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               //Video Container ------------------------------------------------
@@ -152,10 +154,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Full Body Pregnancy Workout (With Partner Option) | 15-Minutes Pregnancy Exercises',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video2),
@@ -167,9 +169,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         fontSize: 15,
+                        color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video3),
@@ -181,9 +184,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         fontSize: 15,
+                          color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video4),
@@ -194,10 +198,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Prenatal Cardio Workout | Day 7 - 30 Minute Pregnancy Cardio Workout (Pregnancy Workout Challenge)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video5),
@@ -208,10 +212,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Pilates For Back Pain & Sciatica (Pregnancy Back Pain Relief/Sciatica Relief)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video6),
@@ -222,10 +226,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Walking HIIT Workout (Pregnancy Exercises To Stay Fit & Active)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video7),
@@ -236,10 +240,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Short & Efficient Prenatal Pilates (15-Minute Pregnancy Pilates Class)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video8),
@@ -250,10 +254,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Advanced Pregnancy Workout | Total Body Tabata HIIT (Cardio + Pregnancy Exercises + Stretches)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video9),
@@ -264,10 +268,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Prenatal Cardio Workout | Day 7 - 30 Minute Pregnancy Cardio Workout (Pregnancy Workout Challenge)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video10),
@@ -278,10 +282,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       '15-Minute Pregnancy Yoga | First, Second & Third Trimester Prenatal Yoga',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video11),
@@ -292,10 +296,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       '15 Minute Dance Cardio Workout! | Low Impact & Easy To Follow | Pregnancy/Postpartum Safe Too!',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video12),
@@ -306,10 +310,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       '15 Minute Pregnancy Workout (Second Trimester + Third Trimester)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video13),
@@ -321,10 +325,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Feel Amazing After These Birth Ball Exercises For Birth Prep & To Relieve Pregnancy Symptoms',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video14),
@@ -336,10 +340,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Day 3 // Pregnancy Workout Challenge // Cardio',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video15),
@@ -351,10 +355,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Prenatal Yoga Workout (Pregnancy Yoga) - safe for all trimesters',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video16),
@@ -366,10 +370,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Lower Body Workout | Day 10 - Pregnancy Workout Challenge (1st, 2nd, 3rd Trimester)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video17),
@@ -381,10 +385,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Full Body Pregnancy Workout With Birth Ball Exercises | Cardio + Exercises + Stretches',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video18),
@@ -396,10 +400,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Exercises Second Trimester | 30 Minute Pregnancy Workout (Safe For All Trimesters)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video19),
@@ -411,10 +415,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       '35-Min Yoga Sculpt (Pregnancy and Postpartum Safe) Optional Light Weights',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video20),
@@ -426,10 +430,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Exercise For Normal Delivery & Easy Labor | Vaginal Birth | Natural Birth Preparation',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video21),
@@ -441,10 +445,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Yoga & Birth Preparation | Day 13 - 30 Minute Prenatal Yoga Class',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video22),
@@ -456,10 +460,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Prenatal Pilates Barre Sculpt | 35-min Pregnancy Workout (1st, 2nd, 3rd Trimester)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video23),
@@ -471,10 +475,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Full Body Pregnancy Workout | Pregnancy Cardio + Pregnancy Exercises',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video24),
@@ -486,10 +490,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Cardio + Pilates Combo Class! (First, Second & Third Trimester Safe)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video25),
@@ -501,10 +505,10 @@ class _PregExcercisePageEngState extends State<PregExcercisePageEng> {
                       'Pregnancy Barre Pilates | 30-Minute Barre Pilates For Pregnancy (1st, 2nd, 3rd Trimester Exercise)',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
-                        fontSize: 15,
+                        fontSize: 15,color: Colors.white
                       )),
                   height: 70,
-                  color: Colors.white,
+                  color: Colors.deepPurpleAccent.shade700,
                 ),
               ),
               YTcontainer(video26),

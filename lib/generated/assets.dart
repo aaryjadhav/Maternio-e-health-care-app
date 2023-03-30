@@ -41,13 +41,11 @@ class Assets {
   static const String assetsDoctorhomeicon = 'assets/doctorhomeicon.png';
   static const String assetsDoctoricon = 'assets/doctoricon.png';
   static const String assetsDoctorpp = 'assets/doctorpp.png';
-  static const String assetsEnglish = 'assets/english.jpg';
   static const String assetsExit = 'assets/exit.png';
   static const String assetsFacebook = 'assets/facebook.png';
   static const String assetsFirstaidkit1 = 'assets/Firstaidkit1.png';
   static const String assetsGoogle = 'assets/google.png';
   static const String assetsHelp = 'assets/help.png';
-  static const String assetsHindi = 'assets/hindi.jpg';
   static const String assetsHospital = 'assets/hospital.png';
   static const String assetsLinkedin = 'assets/linkedin.png';
   static const String assetsLogo = 'assets/logo.png';
@@ -78,7 +76,6 @@ class Assets {
   static const String maternio1AssetsAshalpp = 'assets/ashalpp.png';
   static const String maternio1AssetsDevangpp = 'assets/devangpp.png';
   static const String maternio1AssetsDoctorhome = 'assets/doctorhome.png';
-  static const String maternio1AssetsHindi = 'assets/hindi.png';
   static const String maternio1AssetsSnowypp = 'assets/snowypp.png';
   static const String maternio1MainActivity = 'android/app/src/main/kotlin/com/example/maternio_1/MainActivity.kt';
   static const String mipmapHdpiIcLauncher = 'android/app/src/main/res/mipmap-hdpi/ic_launcher.png';
