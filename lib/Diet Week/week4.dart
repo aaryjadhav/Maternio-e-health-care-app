@@ -103,7 +103,7 @@ class _week4State extends State<week4> {
                                 ),
                               ),
                               Text(
-                                "Carrot juice (1 glass).",
+                                "Carrot juice (1 glass).                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week4State extends State<week4> {
                                 ),
                               ),
                               Text(
-                                "Oatmeal (1 cup) + 2 boiled eggs.",
+                                "Oatmeal (1 cup) + 2 boiled eggs.                          ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week4State extends State<week4> {
                                 ),
                               ),
                               Text(
-                                "Banana milkshake (1 glass).",
+                                "Banana milkshake (1 glass).                          ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -405,6 +405,7 @@ class _week4State extends State<week4> {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+
     ));
   }
 }

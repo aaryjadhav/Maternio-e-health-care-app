@@ -523,6 +523,8 @@ class _PregFormPageState extends State<PregnantFormPage> {
                       onPressed: agree
                           ? () {
                         setState(() {
+                          FirebaseAuth.instance.currentUser!
+                              .updateDisplayName(_name.text.toString());
                           if (formkey.currentState!.validate()) {
                             Navigator.push(
                                 context,
@@ -530,6 +532,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
                                     builder: (context) => HomePage()));
                           }
                         });
+
                         updatepregnantwomen(
                             postalcode: _postalcode.text.toString(),
                             name: _name.text.toString(),

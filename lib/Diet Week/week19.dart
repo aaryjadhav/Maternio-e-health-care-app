@@ -103,7 +103,7 @@ class _week19State extends State<week19> {
                                 ),
                               ),
                               Text(
-                                "Almond milk.",
+                                "Almond milk.                                                                 ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week19State extends State<week19> {
                                 ),
                               ),
                               Text(
-                                "Oats with 2 boiled eggs.",
+                                "Oats with 2 boiled eggs.                                                                 ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week19State extends State<week19> {
                                 ),
                               ),
                               Text(
-                                "Carrot and beetroot soup.",
+                                "Carrot and beetroot soup.                                                    ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -271,7 +271,7 @@ class _week19State extends State<week19> {
                                 ),
                               ),
                               Text(
-                                "Vegetable khichdi.",
+                                "Vegetable khichdi.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week19State extends State<week19> {
                                 ),
                               ),
                               Text(
-                                "Corn and cheese sandwich.",
+                                "Corn and cheese sandwich.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week19State extends State<week19> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

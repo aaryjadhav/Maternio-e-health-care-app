@@ -103,7 +103,7 @@ class _week16State extends State<week16> {
                                 ),
                               ),
                               Text(
-                                "Dry fruits (10 to 12 pieces).",
+                                "Dry fruits (10 to 12 pieces).                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week16State extends State<week16> {
                                 ),
                               ),
                               Text(
-                                "Chicken soup.",
+                                "Chicken soup.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week16State extends State<week16> {
                                 ),
                               ),
                               Text(
-                                "Chicken cutlet.",
+                                "Chicken cutlet.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week16State extends State<week16> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

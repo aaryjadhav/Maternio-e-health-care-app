@@ -405,6 +405,7 @@ class _week2State extends State<week2> {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+
     ));
   }
 }

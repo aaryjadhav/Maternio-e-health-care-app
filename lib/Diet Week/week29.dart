@@ -103,7 +103,7 @@ class _week29State extends State<week29> {
                                 ),
                               ),
                               Text(
-                                "Beetroot juice 1 glass.",
+                                "Beetroot juice 1 glass.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week29State extends State<week29> {
                                 ),
                               ),
                               Text(
-                                "Upma with dry fruits.",
+                                "Upma with dry fruits.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week29State extends State<week29> {
                                 ),
                               ),
                               Text(
-                                "Sweet potato boiled.",
+                                "Sweet potato boiled.                                                                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week29State extends State<week29> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------
@@ -383,7 +383,7 @@ class _week29State extends State<week29> {
                                 ),
                               ),
                               Text(
-                                "2 rootis with chicken curry and rice.",
+                                "2 rootis with chicken curry and rice.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),

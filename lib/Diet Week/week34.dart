@@ -103,7 +103,7 @@ class _week34State extends State<week34> {
                                 ),
                               ),
                               Text(
-                                "Banana milkshake (1 glass).",
+                                "Banana milkshake (1 glass).                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week34State extends State<week34> {
                                 ),
                               ),
                               Text(
-                                "Vegetable soup + some fried snacks.",
+                                "Vegetable soup + some fried snacks.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week34State extends State<week34> {
                                 ),
                               ),
                               Text(
-                                "Lentil sprouts 1 cup.",
+                                "Lentil sprouts 1 cup.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week34State extends State<week34> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

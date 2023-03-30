@@ -103,7 +103,7 @@ class _week10State extends State<week10> {
                                 ),
                               ),
                               Text(
-                                "1 plain glass of milk.",
+                                "1 plain glass of milk.                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week10State extends State<week10> {
                                 ),
                               ),
                               Text(
-                                "Channa chat 1 cup+ 1 cup light tea..",
+                                "Channa chat 1 cup+ 1 cup light tea.                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week10State extends State<week10> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 130,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

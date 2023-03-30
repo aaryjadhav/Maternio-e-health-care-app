@@ -30,6 +30,7 @@ import 'package:maternio_1/Diet%20Week/week7.dart';
 import 'package:maternio_1/Diet%20Week/week8.dart';
 import 'package:maternio_1/Diet%20Week/week9.dart';
 
+import '../Main screens/navbar.dart';
 import 'week22.dart';
 import 'week28.dart';
 import 'week29.dart';
@@ -1727,6 +1728,7 @@ class _diet_chartState extends State<diet_chart> {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+          bottomNavigationBar: BottomNavBar(0),
     ));
   }
 }

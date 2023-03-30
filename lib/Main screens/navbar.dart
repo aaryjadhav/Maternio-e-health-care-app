@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maternio_1/Additional%20Info/add_info.dart';
 import 'package:maternio_1/Main%20screens/notifications.dart';
 
 
@@ -30,21 +31,21 @@ class BottomNavBar extends StatelessWidget {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
-            label: 'Home',
+            label: 'Home\n ',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.emergency_outlined),
-            label: 'Ambulance',
+            label: 'Ambulance\n ',
 
           ),
 
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_active_outlined),
-            label: 'Notification',
+            icon: Icon(Icons.info_outline_rounded),
+            label: 'Additional\n      Info',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_2_outlined),
-            label: 'Profile',
+            label: 'Profile\n ',
           ),
         ],
         showUnselectedLabels: false,
@@ -65,7 +66,7 @@ class BottomNavBar extends StatelessWidget {
 
           if (index == 2) {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>  notification()));
+                MaterialPageRoute(builder: (context) =>  add_info()));
           }
           if (index == 3) {
             Navigator.push(

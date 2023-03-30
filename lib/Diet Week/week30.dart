@@ -103,7 +103,7 @@ class _week30State extends State<week30> {
                                 ),
                               ),
                               Text(
-                                "1 plain glass of milk.",
+                                "1 plain glass of milk.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week30State extends State<week30> {
                                 ),
                               ),
                               Text(
-                                "Idli with chutney and sambar.",
+                                "Idli with chutney and sambar.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -271,7 +271,7 @@ class _week30State extends State<week30> {
                                 ),
                               ),
                               Text(
-                                "●	Stuffed paratha with sprouts salad.",
+                                "Stuffed paratha with sprouts salad.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week30State extends State<week30> {
                                 ),
                               ),
                               Text(
-                                "1 medium-sized avocado with 1 spoon of peanut butter.",
+                                "1 medium-sized avocado with 1 spoon of peanut butter.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week30State extends State<week30> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------
@@ -383,7 +383,7 @@ class _week30State extends State<week30> {
                                 ),
                               ),
                               Text(
-                                "Thepla with green vegetable salad.",
+                                "Thepla with green vegetable salad.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),

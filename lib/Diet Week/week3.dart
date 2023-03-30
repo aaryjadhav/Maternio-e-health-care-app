@@ -103,7 +103,7 @@ class _week3State extends State<week3> {
                                 ),
                               ),
                               Text(
-                                "Banana milkshake (1 glass)",
+                                "Banana milkshake (1 glass)                      ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week3State extends State<week3> {
                                 ),
                               ),
                               Text(
-                                "10-14 pieces of dry fruits",
+                                "10-14 pieces of dry fruits                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week3State extends State<week3> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 130,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------
@@ -405,6 +405,7 @@ class _week3State extends State<week3> {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+
     ));
   }
 }

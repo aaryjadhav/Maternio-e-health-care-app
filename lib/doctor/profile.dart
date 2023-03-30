@@ -153,15 +153,6 @@ class _HomePageState extends State<Profile> {
                       ),
                       //---------
                       Spacer(),
-                      IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>PregnantFormPage()));
-                          },
-                          icon: Icon(Icons.create_outlined,
-                              color: Colors.white, size: 24)),
                       SizedBox(width: 16)
                     ],
                   )),

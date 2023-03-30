@@ -24,7 +24,9 @@ class _PregWrokoutState extends State<PregWrokout> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
       child: Scaffold(
+
         backgroundColor: Colors.deepPurpleAccent.shade700,
         appBar: AppBar(
           title: Center(

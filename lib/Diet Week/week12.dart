@@ -103,7 +103,7 @@ class _week12State extends State<week12> {
                                 ),
                               ),
                               Text(
-                                "Any fruit juice available (1 glass).",
+                                "Any fruit juice available (1 glass).                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week12State extends State<week12> {
                                 ),
                               ),
                               Text(
-                                "Blue berry shake 1 cup.",
+                                "Blue berry shake 1 cup.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),

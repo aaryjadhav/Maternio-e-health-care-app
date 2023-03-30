@@ -103,7 +103,7 @@ class _week25State extends State<week25> {
                                 ),
                               ),
                               Text(
-                                "Dry fruits.",
+                                "Dry fruits.                                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week25State extends State<week25> {
                                 ),
                               ),
                               Text(
-                                "Rice sevai with vegetables.",
+                                "Rice sevai with vegetables.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week25State extends State<week25> {
                                 ),
                               ),
                               Text(
-                                "1 bowl of curd.",
+                                "1 bowl of curd.                                                    ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -271,7 +271,7 @@ class _week25State extends State<week25> {
                                 ),
                               ),
                               Text(
-                                "Pea lemon rice with a green salad.",
+                                "Pea lemon rice with a green salad.             ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week25State extends State<week25> {
                                 ),
                               ),
                               Text(
-                                "Tomato soup.",
+                                "Tomato soup.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week25State extends State<week25> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

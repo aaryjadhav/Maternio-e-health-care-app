@@ -103,7 +103,7 @@ class _week23State extends State<week23> {
                                 ),
                               ),
                               Text(
-                                "1 glass of milk.",
+                                "1 glass of milk.                                                    ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week23State extends State<week23> {
                                 ),
                               ),
                               Text(
-                                "Cheese and vegetable sandwich.",
+                                "Cheese and vegetable sandwich.                                                    ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week23State extends State<week23> {
                                 ),
                               ),
                               Text(
-                                "Boiled sprouts.",
+                                "Boiled sprouts.                                                    ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week23State extends State<week23> {
                                 ),
                               ),
                               Text(
-                                "Vegetable daliya.",
+                                "Vegetable daliya.                                                                 ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week23State extends State<week23> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

@@ -103,7 +103,7 @@ class _week26State extends State<week26> {
                                 ),
                               ),
                               Text(
-                                "1 glass of lemon juice.",
+                                "1 glass of lemon juice.                                                                    ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week26State extends State<week26> {
                                 ),
                               ),
                               Text(
-                                "Vegetable khandvi.",
+                                "Vegetable khandvi.                                                                 ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -271,7 +271,7 @@ class _week26State extends State<week26> {
                                 ),
                               ),
                               Text(
-                                "Chicken salad with vegetable soup.",
+                                "Chicken salad with vegetable soup.             ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -327,7 +327,7 @@ class _week26State extends State<week26> {
                                 ),
                               ),
                               Text(
-                                "Vegetable idli.",
+                                "Vegetable idli.                                                                                           ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week26State extends State<week26> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

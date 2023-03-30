@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../Main screens/navbar.dart';
 import 'diet_chart_preg.dart';
 
 //import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -98,7 +99,7 @@ class week8 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Fresh fruit juice (1 glass).",
+                                "Fresh fruit juice (1 glass).                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -154,7 +155,7 @@ class week8 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "4 Sweet potato boiled.",
+                                "4 Sweet potato boiled.                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -322,7 +323,7 @@ class week8 extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "Dry fruits with tomato soup.",
+                                "Dry fruits with tomato soup.                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -335,7 +336,7 @@ class week8 extends StatelessWidget {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 130,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------
@@ -400,6 +401,7 @@ class week8 extends StatelessWidget {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+
     ));
   }
 }

@@ -103,7 +103,7 @@ class _week27State extends State<week27> {
                                 ),
                               ),
                               Text(
-                                "Cocunut water1 glass.",
+                                "Cocunut water1 glass.                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week27State extends State<week27> {
                                 ),
                               ),
                               Text(
-                                "2 boiled eggs.",
+                                "2 boiled eggs.                                                                 ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -271,7 +271,7 @@ class _week27State extends State<week27> {
                                 ),
                               ),
                               Text(
-                                "Grilled chicken with curd.",
+                                "Grilled chicken with curd.                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week27State extends State<week27> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

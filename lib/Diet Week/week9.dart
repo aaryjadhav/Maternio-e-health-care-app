@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../Main screens/navbar.dart';
 import 'diet_chart_preg.dart';
 
 //import 'package:curved_navigation_bar/curved_navigation_bar.dart';

@@ -103,7 +103,7 @@ class _week32State extends State<week32> {
                                 ),
                               ),
                               Text(
-                                "1 glass of cow milk.",
+                                "1 glass of cow milk.                                                                                                                              ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week32State extends State<week32> {
                                 ),
                               ),
                               Text(
-                                "Bread and jam with tea .",
+                                "Bread and jam with tea .                                                               ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week32State extends State<week32> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 120,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

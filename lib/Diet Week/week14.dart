@@ -103,7 +103,7 @@ class _week14State extends State<week14> {
                                 ),
                               ),
                               Text(
-                                "2 glass of boiled water .",
+                                "2 glass of boiled water .                                                                                                        ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week14State extends State<week14> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 130,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------

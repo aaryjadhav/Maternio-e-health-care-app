@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:maternio_1/Additional%20Info/add_info.dart';
 import 'package:maternio_1/Baby/baby_massage.dart';
 import 'package:maternio_1/Babysitter/babysitter_profile.dart';
 import 'package:maternio_1/Babysitter/babysittersearch.dart';
@@ -490,69 +491,74 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 170,
-                        width: 170,
-                        margin: EdgeInsets.only(left: 15, top: 10),
+                      InkWell(onTap: (){  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => add_info()));},
+                        child: Container(
+                          height: 170,
+                          width: 170,
+                          margin: EdgeInsets.only(left: 15, top: 10),
 
-                        // color: Colors.blue,
+                          // color: Colors.blue,
 
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(left: 40, top: 20),
-                                  child: CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/todaytip.png'),
-                                    radius: 45,
+                          child: Column(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 40, top: 20),
+                                    child: CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('assets/todaytip.png'),
+                                      radius: 45,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Container(
-                                  height: 50,
-                                  //   width: double.infinity,
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    //   width: double.infinity,
 
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(10, 0, 40, 0),
-                                    child: Center(
-                                      child: Expanded(
-                                        child: Text(
-                                          "Additional\nInformation",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.deepPurpleAccent),
-                                          //  maxLines: null,
-                                          textAlign: TextAlign.justify,
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(10, 0, 40, 0),
+                                      child: Center(
+                                        child: Expanded(
+                                          child: Text(
+                                            "Additional\nInformation",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.deepPurpleAccent),
+                                            //  maxLines: null,
+                                            textAlign: TextAlign.justify,
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                                ],
+                              ),
+                            ],
+                          ),
 
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                                // color: Color.fromRGBO(193, 188, 188, 1),
-                              offset: const Offset(1, 1),
-                              blurRadius: 3,
-                              spreadRadius: 1, //New
-                                )
-                          ],
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  // color: Color.fromRGBO(193, 188, 188, 1),
+                                offset: const Offset(1, 1),
+                                blurRadius: 3,
+                                spreadRadius: 1, //New
+                                  )
+                            ],
+                          ),
                         ),
                       ),
                       Container(

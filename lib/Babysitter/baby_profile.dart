@@ -197,18 +197,6 @@ class _baby_profileState extends State<baby_profile> {
                                           MaterialPageRoute(
                                               builder: (context) => BabyFormPage()));
                                     },
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Icons.edit,size: 20,),
-                                          Text(
-                                              "Edit",
-                                              style: GoogleFonts.poppins(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500)
-                                          ),
-                                        ],
-                                      ),
                                     ),
                                   ),
                                 )),

@@ -103,7 +103,7 @@ class _week6State extends State<week6> {
                                 ),
                               ),
                               Text(
-                                "Banana milkshake (1 glass).",
+                                "Banana milkshake (1 glass).                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -159,7 +159,7 @@ class _week6State extends State<week6> {
                                 ),
                               ),
                               Text(
-                                "Oatmeal (1 cup) + 2 boiled eggs.",
+                                "Oatmeal (1 cup) + 2 boiled eggs.                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week6State extends State<week6> {
                                 ),
                               ),
                               Text(
-                                "Kaddu or pumpkin soup (1 bowl).",
+                                "Kaddu or pumpkin soup (1 bowl).                          ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week6State extends State<week6> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 130,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------
@@ -405,6 +405,7 @@ class _week6State extends State<week6> {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+
     ));
   }
 }

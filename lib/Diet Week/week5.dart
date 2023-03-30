@@ -103,7 +103,7 @@ class _week5State extends State<week5> {
                                 ),
                               ),
                               Text(
-                                "1 plain glass of milk.",
+                                "1 plain glass of milk.                                       ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -215,7 +215,7 @@ class _week5State extends State<week5> {
                                 ),
                               ),
                               Text(
-                                "Tamatar or tomato soup (1 bowl).",
+                                "Tamatar or tomato soup (1 bowl).             ",
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(fontSize: 14),
                                 ),
@@ -340,7 +340,7 @@ class _week5State extends State<week5> {
                         SizedBox(width: 5),
                       ],
                     ),
-                    height: 170,
+                    height: 130,
                   ),
                 ),
                 //---------------------------dinner------------------------------------------------------
@@ -405,6 +405,7 @@ class _week5State extends State<week5> {
         ],
       ),
       //-----------------------------bottom navigation bar----------------------
+
     ));
   }
 }

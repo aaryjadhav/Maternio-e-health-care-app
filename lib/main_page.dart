@@ -4,7 +4,7 @@ import 'package:maternio_1/Main%20screens/login/phone.dart';
 import 'package:maternio_1/Main%20screens/welcome_screen.dart';
 
 
-import 'Additional Info/pregw_week_info.dart';
+
 import 'Main screens/home.dart';
 import 'Main screens/profile_selection.dart';
 
