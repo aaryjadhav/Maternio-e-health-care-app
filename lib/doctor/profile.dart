@@ -41,7 +41,7 @@ class _HomePageState extends State<Profile> {
       setState((
 
           ) {
-        if(value["Type of Customer"]=="Baby"){
+        if(value['Type of Customer']=='Baby'){
           name=value['Baby Name'];
           imgsrc="assets/babypp.png";
           phonenumber=value['Parent Contact Number'];
