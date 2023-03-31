@@ -124,22 +124,6 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   MaterialPageRoute(builder: (context) => pregnantmycare()));
             },
           ),
-          ListTile(
-            leading: Container(
-                height: 25,
-                child: Image.asset(
-                  'assets/mycare.png',
-                  color: Colors.deepPurpleAccent.shade700,
-                )),
-            title: Text(
-              'Temporary form page',
-              style: TextStyle(fontSize: 20),
-            ),
-            onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => ProfileSelection()));
-            },
-          ),
          // Divider(thickness: 1,height: 5,color: Colors.black,),
           SizedBox(
             height: 430,
