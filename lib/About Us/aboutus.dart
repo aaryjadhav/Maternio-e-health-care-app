@@ -312,7 +312,7 @@ class _AboutUsState extends State<AboutUs> {
                                                     fontWeight: FontWeight.bold),
                                               ),
                                             ),
-                                            Text("aary.jadhav18@gmail.com"),
+                                            Text("devangdadhaniya7@gmail.com"),
                                           ],
                                         ),
                                       )),

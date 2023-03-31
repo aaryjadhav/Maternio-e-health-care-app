@@ -57,8 +57,8 @@ class _Drawer_screenState extends State<Drawer_screen> {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(FirebaseAuth.instance.currentUser!.displayName.toString()),
-            accountEmail: Text(FirebaseAuth.instance.currentUser!.phoneNumber.toString()),
+            accountName: Text(FirebaseAuth.instance.currentUser!.displayName.toString(),style: TextStyle(color: Colors.deepPurpleAccent.shade700),),
+            accountEmail: Text(FirebaseAuth.instance.currentUser!.phoneNumber.toString(),style: TextStyle(color: Colors.deepPurpleAccent.shade700),),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
@@ -72,7 +72,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                 color: Colors.deepPurpleAccent.shade700,
                 image: DecorationImage(
                   image: NetworkImage(
-                      'https://c4.wallpaperflare.com/wallpaper/410/867/750/vector-forest-sunset-forest-sunset-forest-wallpaper-preview.jpg'),
+                      "https://i.postimg.cc/W4wjLtCK/Maternio-Logo-Reavel.gif"),
                   fit: BoxFit.cover,
                 )),
           ),

@@ -48,7 +48,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
     super.initState();
   }
 
-  String _radioBtnVal = "male";
+  String _radioBtnVal = "";
 
   _handleChange(String? value) {
     setState(() {
@@ -251,7 +251,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                   Flexible(
                     child: GestureDetector(
                       onTap: () {
-                        _handleChange('male');
+                        _handleChange('Male');
                         setState(() {
                           flag = 0;
                         });
@@ -260,27 +260,27 @@ class _BabyFormPageState extends State<BabyFormPage> {
                         height: 46,
                         // width: 150,
                         decoration: BoxDecoration(
-                            color: _radioBtnVal == 'male'
+                            color: _radioBtnVal == 'Male'
                                 ? Colors.grey.shade100
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                                width: _radioBtnVal == 'male' ? 1.5 : 1,
-                                color: _radioBtnVal == 'male'
+                                width: _radioBtnVal == 'Male' ? 1.5 : 1,
+                                color: _radioBtnVal == 'Male'
                                     ? Colors.black
                                     : Colors.grey.shade600)),
                         child: Row(
                           children: [
                             Radio(
                               activeColor: Colors.black,
-                              value: 'male',
+                              value: 'Male',
                               groupValue: _radioBtnVal,
                               onChanged: _handleChange,
                             ),
                             Text(
                               'Male',
                               style: TextStyle(
-                                  color: _radioBtnVal == 'male'
+                                  color: _radioBtnVal == 'Male'
                                       ? Colors.black
                                       : Colors.grey.shade600),
                             )
@@ -293,7 +293,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                   Flexible(
                     child: GestureDetector(
                         onTap: () {
-                          _handleChange('female');
+                          _handleChange('Female');
                           setState(() {
                             flag = 1;
                           });
@@ -302,27 +302,27 @@ class _BabyFormPageState extends State<BabyFormPage> {
                           height: 46,
                           // width: 150,
                           decoration: BoxDecoration(
-                              color: _radioBtnVal == 'female'
+                              color: _radioBtnVal == 'Female'
                                   ? Colors.grey.shade100
                                   : Colors.white,
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                  width: _radioBtnVal == 'female' ? 1.5 : 1,
-                                  color: _radioBtnVal == 'female'
+                                  width: _radioBtnVal == 'Female' ? 1.5 : 1,
+                                  color: _radioBtnVal == 'Female'
                                       ? Colors.black
                                       : Colors.grey.shade600)),
                           child: Row(
                             children: [
                               Radio(
                                 activeColor: Colors.black,
-                                value: 'female',
+                                value: 'Female',
                                 groupValue: _radioBtnVal,
                                 onChanged: _handleChange,
                               ),
                               Text(
                                 'Female',
                                 style: TextStyle(
-                                    color: _radioBtnVal == 'female'
+                                    color: _radioBtnVal == 'Female'
                                         ? Colors.black
                                         : Colors.grey.shade600),
                               )
@@ -532,7 +532,7 @@ class _BabyFormPageState extends State<BabyFormPage> {
                                 updatebaby(
                                   name: _name.text.toString(),
                                   date: _date.text.toString(),
-                                  gender: flag == 0 ? 'male' : 'female',
+                                  gender: flag == 0 ? 'Male' : 'Female',
                                   babyage: _babyage.text.toString(),
                                   height: _babyheight.text.toString(),
                                   weight: _babyweight.text.toString(),

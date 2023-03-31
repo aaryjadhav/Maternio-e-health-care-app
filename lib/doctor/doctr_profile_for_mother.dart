@@ -5,13 +5,34 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:maternio_1/Main%20screens/home.dart';
 import 'package:maternio_1/doctor/profile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../Main screens/navbar.dart';
 import '../Baby/BabyFormPageGradient.dart';
 //import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class doctor_profile_message extends StatefulWidget {
-  const doctor_profile_message({Key? key}) : super(key: key);
+  String docname = "";
+  String doctype = "";
+  String docworkinghrs = "";
+  String photo = "";
+  String docgender = "";
+  String docqualification = "";
+  String doccontact = "";
+  String dochospitalname = "";
+  String dochospitaladd = "";
+  String doclocation="";
+
+  doctor_profile_message(
+      this.docname,
+      this.doctype,
+      this.docworkinghrs,
+      this.photo,
+      this.doccontact,
+      this.docgender,
+      this.dochospitaladd,
+      this.dochospitalname,
+      this.docqualification,this.doclocation);
 
   @override
   State<doctor_profile_message> createState() => _doctor_profile_messageState();
@@ -59,8 +80,7 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                             children: [
                               //---------------back icon----------------------------------------
                               Padding(
-                                padding:
-                                const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                                 child: IconButton(
                                   iconSize: 25,
                                   icon: const Icon(Icons.arrow_back_ios),
@@ -70,8 +90,7 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
                                 child: Text(
                                   //--------------------text----------------------------------------
                                   "Profile",
@@ -94,22 +113,19 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                 radius: 60,
                                 child: CircleAvatar(
                                     backgroundImage:
-                                    AssetImage('assets/doctorpp.png'),
+                                       NetworkImage(widget.photo),
                                     radius: 55),
                               ),
-
                             ],
                           ),
                           SizedBox(height: 15),
-                          Text("Dr.Aary Jadhav",
+                          Text(widget.docname,
                               style: GoogleFonts.poppins(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500)),
+                                  fontSize: 20, fontWeight: FontWeight.w500)),
                         ],
                       ),
                     ),
                   ),
-
                   SizedBox(
                     width: 10,
                   ),
@@ -118,37 +134,44 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                     child: Column(
                       children: <Widget>[
                         Expanded(
-                          //-----------------------------message button-------------------------------------
+                            //-----------------------------message button-------------------------------------
                             flex: 1,
                             child: Container(
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.fromLTRB(
-                                    82, 15, 25, 0),
-                                child: InkWell(onTap: (){},
+                                padding:
+                                    const EdgeInsets.fromLTRB(82, 15, 25, 0),
+                                child: InkWell(
+                                  onTap: () {
+                                    launchUrl(
+                                      Uri.parse("https://api.whatsapp.com/send?phone=" +
+                                          widget.doccontact +
+                                          "&text=Hi," +
+                                          widget.docname+
+                                          " on Maternio"),
+                                      mode: LaunchMode.externalApplication,
+                                    );
+                                  },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Icon(Icons.message_rounded),
-                                      Text(
-                                          "Message",
+                                      Text("Message",
                                           style: GoogleFonts.poppins(
                                               fontSize: 15,
-                                              fontWeight: FontWeight.w500)
-                                      ),
+                                              fontWeight: FontWeight.w500)),
                                     ],
                                   ),
                                 ),
                               ),
                             )),
                         Expanded(
-                          //------------------------------ container below edit button----------------------------
+                            //------------------------------ container below edit button----------------------------
                             flex: 5,
                             child: Padding(
-                              padding:
-                              const EdgeInsets.fromLTRB(0, 0, 7, 0),
+                              padding: const EdgeInsets.fromLTRB(0, 0, 7, 0),
                               child: Container(
                                 decoration: BoxDecoration(
                                   boxShadow: [
@@ -161,18 +184,17 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(
-                                      15, 15, 0, 0),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(15, 15, 0, 0),
                                   child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       SizedBox(
                                         height: 15,
                                       ),
                                       Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             "Designation",
@@ -184,8 +206,7 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                             "Doctor",
                                             style: GoogleFonts.poppins(
                                                 color: Colors
-                                                    .deepPurpleAccent
-                                                    .shade700,
+                                                    .deepPurpleAccent.shade700,
                                                 //fontWeight: FontWeight.w500,
                                                 fontSize: 12),
                                           ),
@@ -196,11 +217,10 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                                 fontSize: 17),
                                           ),
                                           Text(
-                                            "1234567890",
+                                            widget.doccontact,
                                             style: GoogleFonts.poppins(
                                                 color: Colors
-                                                    .deepPurpleAccent
-                                                    .shade700,
+                                                    .deepPurpleAccent.shade700,
                                                 //fontWeight: FontWeight.w500,
                                                 fontSize: 12),
                                           ),
@@ -211,11 +231,10 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                                 fontSize: 17),
                                           ),
                                           Text(
-                                            "M.B.B.S",
+                                            widget.docqualification,
                                             style: GoogleFonts.poppins(
                                                 color: Colors
-                                                    .deepPurpleAccent
-                                                    .shade700,
+                                                    .deepPurpleAccent.shade700,
                                                 //fontWeight: FontWeight.w500,
                                                 fontSize: 12),
                                           ),
@@ -226,11 +245,10 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                                 fontSize: 17),
                                           ),
                                           Text(
-                                            "Male",
+                                            widget.docgender,
                                             style: GoogleFonts.poppins(
                                                 color: Colors
-                                                    .deepPurpleAccent
-                                                    .shade700,
+                                                    .deepPurpleAccent.shade700,
                                                 //fontWeight: FontWeight.w500,
                                                 fontSize: 12),
                                           ),
@@ -241,11 +259,10 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                                 fontSize: 17),
                                           ),
                                           Text(
-                                            "9:00am - 7:00pm",
+                                            widget.docworkinghrs,
                                             style: GoogleFonts.poppins(
                                                 color: Colors
-                                                    .deepPurpleAccent
-                                                    .shade700,
+                                                    .deepPurpleAccent.shade700,
                                                 //fontWeight: FontWeight.w500,
                                                 fontSize: 12),
                                           ),
@@ -291,57 +308,41 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Hospital/Clinic Name",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 17),
-                            ),
-                            Text(
-                              "Maternio Hospital",
-                              style: GoogleFonts.poppins(
-                                  color: Colors.deepPurpleAccent.shade700,
-                                  //fontWeight: FontWeight.w500,
-                                  fontSize: 12),
-                            ),
-                            Padding(
-                              padding:
-                              const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                              child: Text(
-                                "Hospital/Clinic Address",
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Hospital/Clinic Name",
                                 style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17),
+                                    fontWeight: FontWeight.w500, fontSize: 17),
                               ),
-                            ),
-                            Text(
-                              "B/109, Bhanuhans C.H.S, Navghar Road, Bhayandar(east),\nThane-401105",
-                              style: GoogleFonts.poppins(
-                                  color: Colors.deepPurpleAccent.shade700,
-                                  //fontWeight: FontWeight.w500,
-                                  fontSize: 12),
-                            ),
-                            Padding(
-                              padding:
-                              const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                              child: Text(
-                                "Residential Address",
+                              Text(
+                                widget.dochospitalname,
                                 style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17),
+                                    color: Colors.deepPurpleAccent.shade700,
+                                    //fontWeight: FontWeight.w500,
+                                    fontSize: 12),
                               ),
-                            ),
-                            Text(
-                              "B/109, Bhanuhans C.H.S, Navghar Road, Bhayandar(east),\nThane-401105",
-                              style: GoogleFonts.poppins(
-                                  color: Colors.deepPurpleAccent.shade700,
-                                  //fontWeight: FontWeight.w500,
-                                  fontSize: 12),
-                            ),
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                child: Text(
+                                  "Hospital/Clinic Address",
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500, fontSize: 17),
+                                ),
+                              ),
+                              Text(
+                                widget.dochospitaladd,
+                                  maxLines: 5,
+                                overflow: TextOverflow.ellipsis,
+                                style: GoogleFonts.poppins(
+                                    color: Colors.deepPurpleAccent.shade700,
+                                    //fontWeight: FontWeight.w500,
+                                    fontSize: 12),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -369,7 +370,7 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
               height: 10,
             ),
             Expanded(
-              //---------------------3rd row with add. information-----------------------------
+                //---------------------3rd row with add. information-----------------------------
                 flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
@@ -403,10 +404,11 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                     color: Colors.deepPurpleAccent.shade700,
                                   )),
                               Text(
-                                "My Care \nHospital,Vasai",
+                                widget.dochospitalname+", "+widget.doclocation,
                                 style: GoogleFonts.poppins(
                                     fontSize: 12,
-                                    fontWeight: FontWeight.w500,color: Colors.deepPurpleAccent),
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.deepPurpleAccent),
                                 textAlign: TextAlign.center,
                               )
                             ],
@@ -446,10 +448,11 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                 ),
                               ),
                               Text(
-                                "Working Hours\n9am - 7pm",
+                                "Working Hours\n"+widget.docworkinghrs,
                                 style: GoogleFonts.poppins(
                                     fontSize: 12,
-                                    fontWeight: FontWeight.w500,color: Colors.deepPurpleAccent),
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.deepPurpleAccent),
                                 textAlign: TextAlign.center,
                               )
                             ],
@@ -487,13 +490,13 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                     color: Colors.deepPurpleAccent.shade700,
                                   )),
                               Padding(
-                                padding:
-                                const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
                                 child: Text(
-                                  "Doctor Type \nGynaecologist",
+                                  "Doctor Type \n"+widget.doctype,
                                   style: GoogleFonts.poppins(
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500,color: Colors.deepPurpleAccent),
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.deepPurpleAccent),
                                   textAlign: TextAlign.center,
                                 ),
                               )

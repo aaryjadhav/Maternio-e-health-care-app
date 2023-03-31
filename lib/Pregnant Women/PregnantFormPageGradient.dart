@@ -47,7 +47,7 @@ class _PregFormPageState extends State<PregnantFormPage> {
     super.initState();
   }
 
-  String _radioBtnVal = "male";
+  String _radioBtnVal = "";
 
   _handleChange(String? value) {
     setState(() {

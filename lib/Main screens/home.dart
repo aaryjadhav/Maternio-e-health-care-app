@@ -99,6 +99,10 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)
+                        ),
                         height: 160,
                         width: 430,
                         margin: EdgeInsets.only(left: 15, top: 10),
@@ -118,6 +122,7 @@ class _HomePageState extends State<HomePage> {
                                   Container(
                                     margin: EdgeInsets.only(left: 12, top: 30),
                                     child: CircleAvatar(
+
                                       backgroundImage:
                                           AssetImage('assets/doctorpp.png'),
                                       radius: 50,
@@ -168,21 +173,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
 
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/doctorhome.png"),
-                              fit: BoxFit.cover),
-                          // color: Colors.deepPurpleAccent.shade700,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                                //color: Color.fromRGBO(193, 188, 188, 1),
-                              offset: const Offset(1, 1),
-                              blurRadius: 3,
-                              spreadRadius: 1,//New
-                                )
-                          ],
-                        ),
+
                       ),
                     ],
                   ),
@@ -282,11 +273,9 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage("assets/babysitterhome.png"),
-                              fit: BoxFit.cover),
-                          // color: Colors.deepPurpleAccent.shade700,
-                          borderRadius: BorderRadius.circular(10),
+
+                           color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
                           boxShadow: [
                             BoxShadow(
                               //color: Color.fromRGBO(193, 188, 188, 1),
@@ -407,7 +396,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(30),
                           boxShadow: [
                             BoxShadow(
                                   //color: Color.fromRGBO(193, 188, 188, 1),
@@ -480,7 +469,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(30),
                           boxShadow: [
                             BoxShadow(
                                 //  color: Color.fromRGBO(193, 188, 188, 1),
@@ -549,7 +538,7 @@ class _HomePageState extends State<HomePage> {
 
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(30),
                             boxShadow: [
                               BoxShadow(
                                   // color: Color.fromRGBO(193, 188, 188, 1),
@@ -622,7 +611,7 @@ class _HomePageState extends State<HomePage> {
 
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(30),
                           boxShadow: [
                             BoxShadow(
                                 //color: Color.fromRGBO(193, 188, 188, 1),

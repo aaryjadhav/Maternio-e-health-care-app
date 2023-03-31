@@ -1,12 +1,10 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../Main screens/navbar.dart';
 
-void main() {
-  runApp(preg_info());
-}
 
 class preg_info extends StatefulWidget {
   @override
@@ -14,7 +12,29 @@ class preg_info extends StatefulWidget {
 }
 
 class _preg_infoState extends State<preg_info> {
+  String content="";
+  Future fetchData() async {
+
+    await FirebaseFirestore.instance
+        .collection('pregnanttips')
+        .doc("1")
+        .get()
+        .then((value) async {
+     content = value["Text"];
+
+
+    });}
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      fetchData();
+    });
+
+  }
+  @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -87,7 +107,7 @@ class _preg_infoState extends State<preg_info> {
                               children: [
                                 
                                 Text(
-                                  " \u2022 Eat breakfast every day. \n \u2022 Eat foods high in fiber, and drink fluids (particularly water) to avoid constipation. \n \u2022 Avoid alcohol, raw or undercooked fish, fish high in mercury, undercooked meat and poultry, and soft cheeses. \n \u2022 Do moderate-intensity aerobic activity at least 150 minutes a week during your pregnancy. \n \u2022 Choose moderate activities that aren’t likely to hurt you, such as walking or water or chair aerobics. \n \u2022 Stop exercising if you feel dizzy, short of breath, tired, or sick to your stomach. \n \u2022 Consuming healthy foods and low-calorie beverages, particularly water, and the appropriate number of calories may help you and your baby gain the proper amount of weight.",
+                                  content,
                                   style: GoogleFonts.poppins(
                                     textStyle: TextStyle(fontSize: 18),
                                   ),

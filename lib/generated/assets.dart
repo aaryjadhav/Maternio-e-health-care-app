@@ -14,6 +14,7 @@ class Assets {
   static const String assetsAmbulance = 'assets/ambulance.jpg';
   static const String assetsAndroid = 'assets/android.png';
   static const String assetsApple = 'assets/apple.png';
+  static const String assetsArrowRight = 'assets/arrow-right.png';
   static const String assetsAshalpp = 'assets/ashalpp.jpg';
   static const String assetsBaby1 = 'assets/Baby1.png';
   static const String assetsBabyFace1 = 'assets/baby_face_1.gif';
@@ -50,6 +51,7 @@ class Assets {
   static const String assetsGoogle = 'assets/google.png';
   static const String assetsHelp = 'assets/help.png';
   static const String assetsHospital = 'assets/hospital.png';
+  static const String assetsIcLauncher = 'assets/ic_launcher.png';
   static const String assetsLinkedin = 'assets/linkedin.png';
   static const String assetsLogo = 'assets/logo.png';
   static const String assetsLogobg = 'assets/logobg.png';
@@ -66,13 +68,12 @@ class Assets {
   static const String assetsPregnantw = 'assets/pregnantw.png';
   static const String assetsPregwork = 'assets/pregwork.png';
   static const String assetsQuestion = 'assets/question.png';
+  static const String assetsSearchbutton = 'assets/searchbutton.png';
   static const String assetsSnowypp = 'assets/snowypp.jpg';
   static const String assetsStroller = 'assets/stroller.png';
   static const String assetsTodaytip = 'assets/todaytip.png';
   static const String assetsWeekly = 'assets/weekly.png';
   static const String debugAndroidManifest = 'android/app/src/debug/AndroidManifest.xml';
-  static const String drawableLaunchBackground = 'android/app/src/main/res/drawable/launch_background.xml';
-  static const String drawableV21LaunchBackground = 'android/app/src/main/res/drawable-v21/launch_background.xml';
   static const String gradleWrapperGradleWrapper = 'android/gradle/wrapper/gradle-wrapper.properties';
   static const String iconsDoctoricon = 'assets/icons/doctoricon.png';
   static const String iconsHospital = 'assets/icons/hospital.png';
@@ -86,36 +87,8 @@ class Assets {
   static const String maternio1AssetsSnowypp = 'assets/snowypp.png';
   static const String maternio1MainActivity = 'android/app/src/main/kotlin/com/example/maternio_1/MainActivity.kt';
   static const String mipmapAnydpiV26IcLauncher = 'android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml';
-  static const String mipmapHdpiIcLauncher = 'android/app/src/main/res/mipmap-hdpi/ic_launcher.png';
-  static const String mipmapHdpiIcLauncherBackground = 'android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png';
-  static const String mipmapHdpiIcLauncherForeground = 'android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png';
-  static const String mipmapHdpiIcLauncherMonochrome = 'android/app/src/main/res/mipmap-hdpi/ic_launcher_monochrome.png';
-  static const String mipmapHdpiLauncherIcon = 'android/app/src/main/res/mipmap-hdpi/launcher_icon.png';
-  static const String mipmapMdpiIcLauncher = 'android/app/src/main/res/mipmap-mdpi/ic_launcher.png';
-  static const String mipmapMdpiIcLauncherBackground = 'android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png';
-  static const String mipmapMdpiIcLauncherForeground = 'android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png';
-  static const String mipmapMdpiIcLauncherMonochrome = 'android/app/src/main/res/mipmap-mdpi/ic_launcher_monochrome.png';
-  static const String mipmapMdpiLauncherIcon = 'android/app/src/main/res/mipmap-mdpi/launcher_icon.png';
-  static const String mipmapXhdpiIcLauncher = 'android/app/src/main/res/mipmap-xhdpi/ic_launcher.png';
-  static const String mipmapXhdpiIcLauncherBackground = 'android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png';
-  static const String mipmapXhdpiIcLauncherForeground = 'android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png';
-  static const String mipmapXhdpiIcLauncherMonochrome = 'android/app/src/main/res/mipmap-xhdpi/ic_launcher_monochrome.png';
-  static const String mipmapXhdpiLauncherIcon = 'android/app/src/main/res/mipmap-xhdpi/launcher_icon.png';
-  static const String mipmapXhdpiMaterniologo = 'android/app/src/main/res/mipmap-xhdpi/materniologo.png';
-  static const String mipmapXxhdpiIcLauncher = 'android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png';
-  static const String mipmapXxhdpiIcLauncherBackground = 'android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png';
-  static const String mipmapXxhdpiIcLauncherForeground = 'android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png';
-  static const String mipmapXxhdpiIcLauncherMonochrome = 'android/app/src/main/res/mipmap-xxhdpi/ic_launcher_monochrome.png';
-  static const String mipmapXxhdpiLauncherIcon = 'android/app/src/main/res/mipmap-xxhdpi/launcher_icon.png';
-  static const String mipmapXxxhdpiIcLauncher = 'android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png';
-  static const String mipmapXxxhdpiIcLauncherBackground = 'android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png';
-  static const String mipmapXxxhdpiIcLauncherForeground = 'android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png';
-  static const String mipmapXxxhdpiIcLauncherMonochrome = 'android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_monochrome.png';
-  static const String mipmapXxxhdpiLauncherIcon = 'android/app/src/main/res/mipmap-xxxhdpi/launcher_icon.png';
   static const String pluginsGeneratedPluginRegistrant = 'android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java';
   static const String profileAndroidManifest = 'android/app/src/profile/AndroidManifest.xml';
-  static const String valuesNightStyles = 'android/app/src/main/res/values-night/styles.xml';
-  static const String valuesStyles = 'android/app/src/main/res/values/styles.xml';
   static const String wrapperGradleWrapper = 'android/gradle/wrapper/gradle-wrapper.jar';
 
 }
