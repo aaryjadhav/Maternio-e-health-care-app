@@ -210,11 +210,11 @@ class _PregFormPageState extends State<PregnantFormPage> {
                         context: context,
                         //made so that doctor minimum age should be 20
                         initialDate:
-                        DateTime(date.year - 20, date.month, date.day),
+                        DateTime(date.year , date.month, date.day),
                         firstDate:
                         DateTime(date.year - 80, date.month, date.day),
                         lastDate:
-                        DateTime(date.year - 20, date.month, date.day),
+                        DateTime(date.year , date.month, date.day),
                         helpText: 'Select Your Birth Date',
                         builder: (context, child) {
                           return Theme(
