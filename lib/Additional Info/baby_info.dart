@@ -110,7 +110,7 @@ class _baby_infoState extends State<baby_info>{
                                       fontWeight: FontWeight.bold),
                                 ),
                                 Text(
-                                  content,
+                                  content+"",
                                   style: GoogleFonts.poppins(
                                     textStyle: TextStyle(fontSize: 18),
                                   ),

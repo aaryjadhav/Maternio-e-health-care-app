@@ -50,40 +50,40 @@ class _doctorsearchState extends State<doctorsearch> {
                 ),
               ),
             ),
-            Expanded(
-              child: StreamBuilder<QuerySnapshot>(
-                  stream: FirebaseFirestore.instance
-                      .collection('doctor')
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-                      return Center(
-                        child: Text("No Doctor Found",
-                            style: TextStyle(color: Colors.grey)),
-                      );
-                    } else {
-                      return ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: snapshot.data!.docs.length,
-                          itemBuilder: ((context, index) {
-                            DocumentSnapshot documentSnapshot =
-                                snapshot.data!.docs[index];
-                            return doctorlist(
-                              documentSnapshot['doctorName'],
-                              documentSnapshot['doctorType'],
-                              documentSnapshot['workingHours'],
-                              documentSnapshot['doctorpp'],
-                              documentSnapshot['contanct'],
-                              documentSnapshot['gender'],
-                              documentSnapshot['hospitalClinicAddress'],
-                              documentSnapshot['hospitalClinicName'],
-                              documentSnapshot['qualification'],
-                              documentSnapshot['doctorLocation'],
-                            );
-                          }));
-                    }
-                  }),
-            ),
+              Expanded(
+                child: StreamBuilder<QuerySnapshot>(
+                    stream: FirebaseFirestore.instance
+                        .collection('doctor')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                        return Center(
+                          child: Text("No Doctor Found",
+                              style: TextStyle(color: Colors.grey)),
+                        );
+                      } else {
+                        return ListView.builder(
+                            scrollDirection: Axis.vertical,
+                            itemCount: snapshot.data!.docs.length,
+                            itemBuilder: ((context, index) {
+                              DocumentSnapshot documentSnapshot =
+                                  snapshot.data!.docs[index];
+                              return doctorlist(
+                                documentSnapshot['doctorName'],
+                                documentSnapshot['doctorType'],
+                                documentSnapshot['workingHours'],
+                                documentSnapshot['doctorpp'],
+                                documentSnapshot['contanct'],
+                                documentSnapshot['gender'],
+                                documentSnapshot['hospitalClinicAddress'],
+                                documentSnapshot['hospitalClinicName'],
+                                documentSnapshot['qualification'],
+                                documentSnapshot['doctorLocation'],
+                              );
+                            }));
+                      }
+                    }),
+              ),
           ],
         ));
   }

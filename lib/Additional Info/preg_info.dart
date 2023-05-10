@@ -107,13 +107,13 @@ class _preg_infoState extends State<preg_info> {
                               children: [
                                 
                                 Text(
-                                  content,
+                                  content+".",
                                   style: GoogleFonts.poppins(
                                     textStyle: TextStyle(fontSize: 18),
                                   ),
                                 ),
                                 Text(
-                                  "Note :- The data provided may not be accurate so please confront to doctor once",
+                                  "\nNote :- The data provided may not be accurate so please confront to doctor once",
                                   style: GoogleFonts.poppins(
                                       textStyle: TextStyle(fontSize: 18),
                                       fontWeight: FontWeight.bold),

@@ -24,10 +24,9 @@ List<PlanetInfo> planets = [
       description:
       "\u2022 Name:- Aary Vijay Jadhav\n\u2022 Group No:-3\n\u2022 Class:- TYCO-1\n\u2022 Roll No:- 1816\n\u2022 College:- Bhausaheb Vartak Polytechnic, Vasai(W), Palghar- 401202",
       images: [
-        'https://i.postimg.cc/j5THZXZr/Whats-App-Image-2023-03-29-at-8-10-23-PM.jpg',
-        'https://i.postimg.cc/SxVHDf2M/Whats-App-Image-2023-03-29-at-6-25-39-PM.jpg',
-        'https://i.postimg.cc/05FkCPRs/Whats-App-Image-2023-03-29-at-6-27-47-PM.jpg',
-        'https://i.postimg.cc/cHzYd2KN/Whats-App-Image-2023-03-29-at-6-16-46-PM.jpg',
+        'https://i.postimg.cc/VkhRCD6T/Untitled-design-13.png',
+        'https://i.postimg.cc/y8DGtJ3M/Untitled-design-19.png',
+        'https://i.postimg.cc/W38ShjJm/Untitled-design-20.png',
       ]),
   PlanetInfo(2,
       name: 'Devang Dhadaniya',
@@ -35,9 +34,8 @@ List<PlanetInfo> planets = [
       description:
       "\u2022 Name:- Devang Rajnikant Dhadaniya\n\u2022 Group No:-3\n\u2022 Class:- TYCO-1\n\u2022 Roll No:- 1820\n\u2022 College:- Bhausaheb Vartak Polytechnic, Vasai(W), Palghar- 401202",
       images: [
-        'https://i.postimg.cc/QMwg1DWV/Whats-App-Image-2023-03-29-at-8-04-13-PM.jpg',
-        'https://i.postimg.cc/rwtwzLcf/Whats-App-Image-2023-03-29-at-8-06-36-PM.jpg',
-        'https://i.postimg.cc/15yQBtCb/Whats-App-Image-2023-03-29-at-2-14-20-PM.jpg'
+        'https://i.postimg.cc/dQXrnLvk/Untitled-design-14.png',
+        'https://i.postimg.cc/j52n4rF4/Untitled-design-15.png',
       ]),
   PlanetInfo(3,
       name: 'Snowy Fernandez',
@@ -45,15 +43,16 @@ List<PlanetInfo> planets = [
       description:
       "\u2022 Name:- Snowy Ashok Fernandez\n\u2022 Group No:-3\n\u2022 Class:- TYCO-1\n\u2022 Roll No:- 1810\n\u2022 College:- Bhausaheb Vartak Polytechnic, Vasai(W), Palghar- 401202",
       images: [
-        'https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015_1280.jpg',
-        'https://cdn.pixabay.com/photo/2011/12/14/12/11/astronaut-11080_1280.jpg',
-        'https://cdn.pixabay.com/photo/2016/01/19/17/29/earth-1149733_1280.jpg',
-        'https://image.shutterstock.com/image-photo/3d-render-planet-earth-viewed-600w-1069251782.jpg'
+        'https://i.postimg.cc/QMy1Pt5y/Untitled-design-17.png',
+        'https://i.postimg.cc/WzRrNH5m/Untitled-design-18.png',
       ]),
   PlanetInfo(4,
       name: 'Ashal          \nDabre',
       iconImage: 'assets/ashalpp.png',
       description:
       "\u2022 Name:- Ashal Ashok Fernandez\n\u2022 Group No:-3\n\u2022 Class:- TYCO-1\n\u2022 Roll No:- 18\n\u2022 College:- Bhausaheb Vartak Polytechnic, Vasai(W), Palghar- 401202",
-      images: []),
+      images: [
+        'https://i.postimg.cc/4dpy5N1t/Untitled-design-21.png',
+        'https://i.postimg.cc/zXxBpQTd/Untitled-design-16.png',
+      ]),
 ];

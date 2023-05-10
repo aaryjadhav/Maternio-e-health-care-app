@@ -148,7 +148,7 @@ class _doctor_profile_messageState extends State<doctor_profile_message> {
                                     launchUrl(
                                       Uri.parse("https://api.whatsapp.com/send?phone=" +
                                           widget.doccontact +
-                                          "&text=Hi," +
+                                          "&text=Hi,Dr. " +
                                           widget.docname+
                                           " on Maternio"),
                                       mode: LaunchMode.externalApplication,

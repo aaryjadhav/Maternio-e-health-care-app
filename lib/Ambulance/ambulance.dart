@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../Main screens/navbar.dart';
 //import 'package:google_nav_bar/google_nav_bar.dart';
@@ -81,9 +82,14 @@ class _ambulanceState extends State<ambulance> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {
-                        FlutterPhoneDirectCaller.callNumber('+919987043493');
+                      onPressed: ()
+                      {
+
+                        FlutterPhoneDirectCaller.callNumber('102');
                       },
+                      //{
+                       // launch('tel:102');
+                     // },
                       //color: Colors.orange,
                       // textColor: Colors.white,
 

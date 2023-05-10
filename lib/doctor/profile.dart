@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,7 +94,7 @@ class _HomePageState extends State<Profile> {
               ),
             ),
           ),
-
+              SizedBox(height: 20,),
           // Profile Container -------------------------------------------------
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 5, 16, 33),
@@ -107,6 +108,15 @@ class _HomePageState extends State<Profile> {
               child: Container(
                   height: 90,
                   decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        //color: Color.fromRGBO(193, 188, 188, 1),
+                        offset: const Offset(0.5, 3),
+                        blurRadius: 20,
+                        spreadRadius: 1, //New
+                      )
+                    ],
                     color: Color(0xff6100FF),
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -169,10 +179,12 @@ class _HomePageState extends State<Profile> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 0,
-                        blurRadius: 44,
-                        offset: Offset(0, 4))
+                      color: Colors.grey,
+                      //color: Color.fromRGBO(193, 188, 188, 1),
+                      offset: const Offset(0.5, 3),
+                      blurRadius: 20,
+                      spreadRadius: 1, //New
+                    )
                   ]),
               child: InkWell(onTap: (){
                 FirebaseAuth.instance.signOut();
@@ -243,10 +255,12 @@ class _HomePageState extends State<Profile> {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 0,
-                        blurRadius: 44,
-                        offset: Offset(0, 4))
+                      color: Colors.grey,
+                      //color: Color.fromRGBO(193, 188, 188, 1),
+                      offset: const Offset(0.5, 3),
+                      blurRadius: 20,
+                      spreadRadius: 1, //New
+                    )
                   ]),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -277,9 +291,13 @@ class _HomePageState extends State<Profile> {
                       //---------
                       Spacer(),
                       IconButton(
-                          onPressed: () {
-                            launch('tel:+919004187496');
-                          },
+                          onPressed: ()
+                          //{
+                           // FlutterPhoneDirectCaller.callNumber('tel:+919004187496');
+                         // },
+                          {
+                          launch('tel:+919004187496');
+                           },
                           icon: Icon(Icons.arrow_forward_ios_outlined,
                               color: Colors.black, size: 16)),
                       SizedBox(width: 16)

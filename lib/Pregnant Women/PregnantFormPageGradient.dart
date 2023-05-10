@@ -124,8 +124,8 @@ class _PregFormPageState extends State<PregnantFormPage> {
                             height: 104,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                                    image: NetworkImage(
-                                        "https://images.unsplash.com/photo-1579202673506-ca3ce28943ef"),
+                                    image: AssetImage(
+                                       "assets/pregnantpp.png"),
                                     fit: BoxFit.cover),
                                 shape: BoxShape.circle,
                                 border: Border.all(
