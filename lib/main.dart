@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Main screens/splash.dart';
 
-
+//Aary Jadhav, Devang Dadhaniya
 Future main()async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
